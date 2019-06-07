@@ -7,7 +7,7 @@
 // @match        https://www.leitstellenspiel.de/
 // @match        https://www.missionchief.com/
 // @match        https://www.meldkamerspel.com/
-// @updateURL	 hhttps://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_PanicButton/panicButton.user.js
+// @updateURL	 https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_PanicButton/panicButton.user.js
 // @downloadURL	 https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_PanicButton/panicButton.user.js
 // @grant        none
 // ==/UserScript==

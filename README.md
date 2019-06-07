@@ -8,13 +8,13 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
 
 <ul>
     <li><b>Alliance Building Hider</b></li>
-                <ul><li>Zählt die Anzahl an Fahrzeugen bei der Einsatzstelle</li></ul>
+        <ul><li>Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte</li></ul>
     <li><b>Chatter to Speech</b></li>
         <ul><li>Wandelt Funksprüche zu Sprache um</li></ul>
     <li><b>Mission Header Colorizer</b></li>
         <ul><li>Färbt Einsatz Kopf nach Ort/Einsatztyp</li></ul>
     <li><b>Needed Workers</b></li>
-        <ul><li>Berechnet mindest Personal um Fahrzeuge zu voll zu besetzen</li></ul>
+        <ul><li>Berechnet mindest Personal um Fahrzeuge voll zu besetzen</li></ul>
     <li><b>Panic Button</b></li>
         <ul><li>Alarmiert Rettungsdienst von Verbandseinsätzen zurück,<br>
         verabschiedet sich aus dem Verbandschat und loggt sich dann aus</li></ul>

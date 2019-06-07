@@ -1,5 +1,5 @@
 <h1>LSS Alliance Building Hider</h1>
-Dieses Script entfernt alle dem Verband gehörenen Gebäude Marker von der Karte
+Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte
 
 <hr>
 

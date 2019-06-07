@@ -14,9 +14,8 @@ Es stehen folgende Wildcards zur Verfügung:<br><br>
 |   %ADDRESS%   |   Addresse des Einsatzes      |
 |   %BUILDING%  |   Name des Krankenhauses/Zelle **(Status 7)**     |
 
-<hr>
 
-<b>%UNIT%</b> bei <b>%MISSION%</b> an <b>%ADRESSE%</b> angekommen!
+<b>%UNIT%</b> bei <b>%MISSION%</b> an <b>%ADRESSE%</b> angekommen!<br>
 <b>Florian Düsseldorf 01-HLF20-01</b> bei <b>Mülltonnenbrand</b> an <b>Berliner Allee 25</b> angekommen!
 
 <hr>

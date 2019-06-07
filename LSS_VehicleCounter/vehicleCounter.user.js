@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Vehicle Counter
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.11
+// @version      1.1
 // @description  Zählt Fahrzeuge an der Einsatzstelle
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/missions/*

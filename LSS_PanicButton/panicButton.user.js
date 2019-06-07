@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Panic Button
 // @namespace    https://leitstellenspiel.de
-// @version      1.211
+// @version      1.21
 // @description  Zieht eigenen Rettungsdienst von Verbandseinsätzen ab und loggt aus
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/

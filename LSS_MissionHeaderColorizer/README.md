@@ -8,4 +8,4 @@ Gefärbt wird in folgender Hirachie<br><br>
 
 <hr>
 
-<h6>Diese Idee stammt von [Kuschi82](https://forum.leitstellenspiel.de/cms/index.php?user/7806-kuschi82/)</h6>
+<h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user/7806-kuschi82/">Kuschi82</a></h6>

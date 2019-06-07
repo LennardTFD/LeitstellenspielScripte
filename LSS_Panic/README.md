@@ -13,4 +13,4 @@ var CUSTOM_GOODBYE_MESSAGE = "@all Habe einen Realeinsatz! Rufe meinen Rettungsd
 
 <hr>
 
-<h6>Diese Idee stammt von [Zp9](https://forum.leitstellenspiel.de/cms/index.php?user/3779-zp9/)</h6>
+<h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user/3779-zp9/">Zp9</a></h6>

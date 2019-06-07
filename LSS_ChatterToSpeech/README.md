@@ -22,3 +22,8 @@ Es stehen folgende Wildcards zur Verfügung:<br><br>
 <hr>
 
 <h6>Die Text2Speech API stammt von <a href="https://responsivevoice.com/">Repsonsive Voice</a></h6>
+<br>
+<hr>
+<br>
+
+<h6>Diese Idee stammt von [JaNoe](https://forum.leitstellenspiel.de/cms/index.php?user/7620-janoe/)</h6>

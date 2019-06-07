@@ -22,9 +22,9 @@
     function init()
     {
         //Set Cooldown Storage when not existing
-        if(localStorage.getItem("LSS_Panic") == null)
+        if(localStorage.getItem("LSS_PanicButton") == null)
         {
-            localStorage.setItem("LSS_Panic", "0");
+            localStorage.setItem("LSS_PanicButton", "0");
         }
 
         //Create Button
@@ -47,7 +47,7 @@
             {
                 //reset cooldown Timer
                 var d = new Date();
-                localStorage.setItem("LSS_Panic", d.getTime());
+                localStorage.setItem("LSS_PanicButton", d.getTime());
                 //start procedure
                 codeRed();
             }
@@ -59,7 +59,7 @@
         //Default cooling Time
         var coolingTime = 15;
         //Get last activation of Panic
-        var lastActivation = parseInt(localStorage.getItem("LSS_Panic"));
+        var lastActivation = parseInt(localStorage.getItem("LSS_PanicButton"));
         //Get current time
         var currentTime = new Date();
         currentTime = currentTime.getTime();

@@ -1,5 +1,5 @@
 <h1>LSS Mission Header Colorizer</h1>
-<img height="200px" src="preview.png" >
+<img height="350px" src="preview.png" >
 Dieses Script färbt den Einsatzkopf und die AAO Tabs.<br>
 Gefärbt wird in folgender Hirachie<br><br>
 

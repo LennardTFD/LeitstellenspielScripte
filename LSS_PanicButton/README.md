@@ -1,4 +1,5 @@
 <h1>LSS Panic Button</h1>
+<img height="200px" src="preview.png">
 Dieses Script kümmert sich um das Schließen des Spieles, wenn es mal schnell gehen muss.
 Einheiten des Rettungsdienstes werden von Verbandseinsätzen zurück gerufen um diese nicht zu blockieren.
 Kurz vor dem Ausloggen wird noch eine kurze Mitteilung in den Verbandschat geschrieben

@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         MaxUnit Calculator
-// @version      1.4
+// @version      1.41
 // @description  Max Unit Calculator für LSS
 // @author       LennardTFD
 // @include      https://www.leitstellenspiel.de/buildings/*
 // @exclude      https://www.leitstellenspiel.de/buildings/*/personals
 // @grant        none
 // @run          document-start
-// @updateURL    https://github.com/LennardTFD/lss-workers/raw/master/neededWorkers.user.js
-// @downloadURL  https://github.com/LennardTFD/lss-workers/raw/master/neededWorkers.user.js
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_NeededWorkers/neededWorkers.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_NeededWorkers/neededWorkers.user.js
 // ==/UserScript==
 
 var amount = 0;

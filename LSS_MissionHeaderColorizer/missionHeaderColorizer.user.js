@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Header Colorizer
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.2.73
+// @version      1.2.74
 // @description  Changes Color of Header, depending on City, Mission ID or ZIP Code
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -10,8 +10,8 @@
 // @match        https://www.missionchief.com/missions/*
 // @match        https://www.meldkamerspel.com/
 // @match        https://www.meldkamerspel.com/missions/*
-// @updateURL    https://github.com/LennardTFD/LSS_MissionHeaderColorizer/raw/master/missionHeaderColorizer.user.js
-// @downloadURL  https://github.com/LennardTFD/LSS_MissionHeaderColorizer/raw/master/missionHeaderColorizer.user.js
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionHeaderColorizer/missionHeaderColorizer.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionHeaderColorizer/missionHeaderColorizer.user.js
 // @grant        none
 // ==/UserScript==
 

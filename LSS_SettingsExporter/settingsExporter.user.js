@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         Settings Exporter/Importer
 // @namespace    https://leitstellenspiel.de/
-// @version      1.0
-// @description  try to take over the world!
+// @version      1.1
+// @description  Exportiert/Importiert Script Einstellungen
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/profile/*
-// @updateURL    https://github.com/LennardTFD/LSS_SettingsExporter/raw/master/settingsExporter.user.js
-// @downloadURL  https://github.com/LennardTFD/LSS_SettingsExporter/raw/master/settingsExporter.user.js
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js
 // @grant        none
 // ==/UserScript==
 

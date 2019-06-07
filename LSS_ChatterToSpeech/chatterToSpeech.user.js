@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Chatter to Speech
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.22
+// @version      1.23
 // @description  Einsatzfunk zu Sprache
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
 // @match        https://www.missionchief.com/
 // @match        https://www.meldkamerspel.com/
-// @updateURL    https://github.com/LennardTFD/LSS_ChatterToSpeech/raw/master/chatterToSpeech.user.js
-// @downloadURL  https://github.com/LennardTFD/LSS_ChatterToSpeech/raw/master/chatterToSpeech.user.js
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/chatterToSpeech.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/chatterToSpeech.user.js
 // @require      https://code.responsivevoice.org/responsivevoice.js
 // @grant        none
 // ==/UserScript==

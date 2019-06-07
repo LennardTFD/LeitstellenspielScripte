@@ -1,12 +1,14 @@
 // ==UserScript==
 // @name         Alliance Building Hider
 // @namespace    https://leitstellenspiel.de
-// @version      1.0
+// @version      1.1
 // @description  Hides buildings of alliance
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
 // @match        https://www.missionchief.com/
 // @match        https://www.meldkamerspel.com/
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AllianceBuildingHider/allianceBuildingHider.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AllianceBuildingHider/allianceBuildingHider.user.js
 // @grant        none
 // ==/UserScript==
 function markerListener()

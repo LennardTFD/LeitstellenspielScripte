@@ -7,8 +7,8 @@
 // @match        https://www.leitstellenspiel.de/missions/*
 // @match        https://www.missionchief.com/missions/*
 // @match        https://www.meldkamerspel.com/missions/*
-// @updateURL    https://github.com/LennardTFD/LSS_VehicleCounter/raw/master/vehicleCounter.user.js
-// @downloadURL  https://github.com/LennardTFD/LSS_VehicleCounter/raw/master/vehicleCounter.user.js
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_VehicleCounter/vehicleCounter.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_VehicleCounter/vehicleCounter.user.js
 // @grant        none
 // ==/UserScript==
 

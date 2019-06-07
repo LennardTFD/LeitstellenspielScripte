@@ -7,7 +7,7 @@ Es kann eine Hintergrund Audio für Status 3 Meldungen hinterlegt werden.<br>
 <h5>Für Erweiterungen:</h5>
 Es stehen folgende Wildcards zur Verfügung:<br>
 |   Wildcard    |   Formatierung                |
-|---------------|-------------------------------|
+| ------------- | ----------------------------- |
 |   %USER%      |   Funkrufname der Einheit     |
 |   %MISSION%   |   Name des Einatzes           |
 |   %ADDRESS%   |   Addresse des Einsatzes      |

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Alliance Building Hider
 // @namespace    https://leitstellenspiel.de
-// @version      1.1
+// @version      1.11
 // @description  Hides buildings of alliance
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/

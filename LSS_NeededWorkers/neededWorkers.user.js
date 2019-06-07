@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MaxUnit Calculator
-// @version      1.41
+// @version      1.411
 // @description  Max Unit Calculator für LSS
 // @author       LennardTFD
 // @include      https://www.leitstellenspiel.de/buildings/*

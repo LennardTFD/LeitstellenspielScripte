@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Settings Exporter/Importer
 // @namespace    https://leitstellenspiel.de/
-// @version      1.1
+// @version      1.11
 // @description  Exportiert/Importiert Script Einstellungen
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/profile/*

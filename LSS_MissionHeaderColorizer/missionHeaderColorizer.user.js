@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Header Colorizer
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.2.74
+// @version      1.2.741
 // @description  Changes Color of Header, depending on City, Mission ID or ZIP Code
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/

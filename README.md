@@ -3,16 +3,16 @@ Hier ist meine Sammlung von erstellten Scipte für das Browsergame
 https://www.leitstellenspiel.de
 
 <h4>Zu finden sind folgende Scripte:</h3>
-* <b>Chatter to Speech</b>
-    * Wandelt Funksprüche zu Sprache um
-* <b>Mission Header Colorizer</b>
-    * Färbt Einsatz Kopf nach Ort/Einsatztyp
-* <b>Needed Workers</b>
-    * Berechnet mindest Personal um Fahrzeuge zu voll zu besetzen
-* <b>Panic</b>
+* <b>Chatter to Speech</b><br>
+    * Wandelt Funksprüche zu Sprache um<br>
+* <b>Mission Header Colorizer</b><br>
+    * Färbt Einsatz Kopf nach Ort/Einsatztyp<br>
+* <b>Needed Workers</b><br>
+    * Berechnet mindest Personal um Fahrzeuge zu voll zu besetzen<br>
+* <b>Panic</b><br>
     * Alarmiert Rettungsdienst von Verbandseinsätzen zurück<br>
-    verabschiedet sich aus dem Verbandschat und loggt sich dann aus
-* <b>Settings Exporter</b>
-    * Exportiert Script Einstellungen aus dem Browser
-* <b>Vehicle Counter</b>
-    * Zählt die Anzahl an Fahrzeugen bei der Einsatzstelle
+    verabschiedet sich aus dem Verbandschat und loggt sich dann aus<br>
+* <b>Settings Exporter</b><br>
+    * Exportiert Script Einstellungen aus dem Browser<br>
+* <b>Vehicle Counter</b><br>
+    * Zählt die Anzahl an Fahrzeugen bei der Einsatzstelle<br>

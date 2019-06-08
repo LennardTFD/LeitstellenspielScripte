@@ -14,13 +14,15 @@
 //Main function
 async function calculate()
 {
+    var buildingExclute = [1, 3, 4, 7, 8, 10, 16];
+
     //Get First vehicle in List as reference
     var tbodys = $("tbody").length - 1;
     var firstVeh = $("tbody:eq(" + tbodys + ")").find("tr:eq(0)").find("td:eq(1)").find("a");
     var firstVehUrl = $("tbody:eq(" + tbodys + ")").find("tr:eq(0)").find("td:eq(1)").find("a").attr("href") + "/zuweisung";
     console.log(firstVeh);
     //Stop if building is empty
-    if(!firstVehUrl.includes("/vehicles/"))
+    if(!firstVehUrl.includes("/vehicles/") || buildingExclute.indexOf(parseInt($("h1").attr("building_type"))) != -1)
     {
         return;
     }

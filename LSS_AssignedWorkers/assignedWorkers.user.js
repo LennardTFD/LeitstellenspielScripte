@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zugewiesenes Personal
 // @namespace    https://leitstellenspiel.de/
-// @version      1.1
+// @version      1.2
 // @description  Zeigt dem Fahrzeug zugewiesenes Personal an
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/buildings/*

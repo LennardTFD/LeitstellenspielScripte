@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zugewiesenes Personal
 // @namespace    https://leitstellenspiel.de/
-// @version      1.0
+// @version      1.1
 // @description  Zeigt dem Fahrzeug zugewiesenes Personal an
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/buildings/*
@@ -33,7 +33,7 @@ async function calculate()
 function drawResults(d2d)
 {
     //Get List of vehicles
-    var allVehicles = $("tbody").find("a").not("[class*='btn']");
+    var allVehicles = $("tbody").find("td:nth-child(2n)").find("a").not("[class*='btn']");
 
     //For each vehicle in building
     allVehicles.each((e, t) => {
@@ -64,7 +64,7 @@ function parseResult(html) {
     //List of vehicles with assignment amount
     var assignments = {};
     //Get List of vehicles with assignments
-    var vehicles = $(html).find("tbody").find("a").not("[class*='btn']");
+    var vehicles = $(html).find("tbody").find("td:nth-child(2n)").find("a").not("[class*='btn']");
 
     //For each vehicle with assigned workers
     vehicles.each((e, t) => {
@@ -84,7 +84,7 @@ function parseResult(html) {
             assignments[vehicleUrl] += 1;
         }
     });
-
+    console.log(assignments);
     //return list of assignment count
     return assignments;
 }
@@ -108,5 +108,7 @@ function getAllAssignedUnits(vehUrl)
 (function() {
     'use strict';
     //Execute main
-    calculate();
+    $( document ).ready(function() {
+        calculate();
+    });
 })();

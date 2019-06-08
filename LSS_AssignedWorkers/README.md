@@ -1,5 +1,5 @@
 <h1>LSS Assigned Workers</h1>
-<img height="200px" src="preview.png">
+<img height="350px" src="preview.png">
 Diese Script zeigt an, wie viel Personal einem Fahrzeug bereits zugewiesen wurden
 und wie viel rest Platz es noch hat.
 

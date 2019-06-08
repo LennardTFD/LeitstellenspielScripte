@@ -15,12 +15,16 @@
 async function calculate()
 {
     //Get First vehicle in List as reference
-    var firstVehUrl = $("tbody:eq(1)").find("tr:eq(0)").find("td:eq(1)").find("a").attr("href") + "/zuweisung";
+    var tbodys = $("tbody").length - 1;
+    var firstVeh = $("tbody:eq(" + tbodys + ")").find("tr:eq(0)").find("td:eq(1)").find("a");
+    var firstVehUrl = $("tbody:eq(" + tbodys + ")").find("tr:eq(0)").find("td:eq(1)").find("a").attr("href") + "/zuweisung";
+    console.log(firstVeh);
     //Stop if building is empty
-    if(firstVehUrl == null)
+    if(!firstVehUrl.includes("/vehicles/"))
     {
         return;
     }
+
     //AJAX Call to assigned workers page
     var response = $.parseHTML(await getAllAssignedUnits(firstVehUrl));
     //Parse given Result an count assigned workers
@@ -84,7 +88,6 @@ function parseResult(html) {
             assignments[vehicleUrl] += 1;
         }
     });
-    console.log(assignments);
     //return list of assignment count
     return assignments;
 }
@@ -98,7 +101,6 @@ function getAllAssignedUnits(vehUrl)
             url: vehUrl,
             success: function(data)
             {
-                //console.log(data);
                 resolve(data);
             }
         });

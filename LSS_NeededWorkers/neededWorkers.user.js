@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         MaxUnit Calculator
-// @version      1.42
+// @version      1.5
 // @description  Max Unit Calculator für LSS
 // @author       LennardTFD
 // @include      https://www.leitstellenspiel.de/buildings/*
@@ -70,7 +70,8 @@ function calc()
             {
                 //var workers = $("#vehicle_table").find("tbody:eq(0)").find("tr:eq(" + i + ")").find("td:eq(4)");
                 var workers = $("#vehicle_table").find("tbody:eq(0)").find("tr:eq(" + i + ")").find("td:eq(5)");
-                var text = parseInt(workers.text());
+                var text = workers.text().split("/");
+                text = parseInt(text[text.length - 1]);
                 amount = amount + text;
             }
         }
@@ -78,7 +79,8 @@ function calc()
         {
             //var workers = $("#vehicle_table").find("tbody:eq(0)").find("tr:eq(" + i + ")").find("td:eq(4)");
             var workers = $("#vehicle_table").find("tbody:eq(0)").find("tr:eq(" + i + ")").find("td:eq(5)");
-            var text = parseInt(workers.text());
+            var text = workers.text().split("/");
+            text = parseInt(text[text.length - 1]);
             amount = amount + text;
         }
 

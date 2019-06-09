@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Zugewiesenes Personal
 // @namespace    https://leitstellenspiel.de/
-// @version      1.2
+// @version      1.3
 // @description  Zeigt dem Fahrzeug zugewiesenes Personal an
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/buildings/*
@@ -47,7 +47,18 @@ function drawResults(d2d)
         //Get URL of vehicle (vehicle ID)
         var vehUrl = veh.attr("href");
         //Get label for max workers of vehicle
-        var workerLabel = veh.parent().parent().find("td:eq(5)");
+        var workerLabel = veh.parent().parent().find("td");
+        var workers = workerLabel.length - 1;
+        workerLabel = $(workerLabel[workers]);
+
+        if(workerLabel.find("a").length > 0)
+        {
+            var maxVehWorkers = workerLabel.text().split("/")[0];
+            //Remove Text in front
+            workerLabel.find("a")[0].previousSibling.remove();
+            workerLabel.html(maxVehWorkers + workerLabel.html());
+        }
+
         var assignedWorkers;
         //if units are assigned
         if(d2d[vehUrl] != null)

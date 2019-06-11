@@ -3,7 +3,7 @@
 // @version      1.0
 // @description  Wählt alle Privat Nachrichten aus um sie zu löschen
 // @author       LennardTFD
-// @include      https://www.leitstellenspiel.de/messages?
+// @include      https://www.leitstellenspiel.de/messages*
 // @grant        none
 // @run          document-start
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_DeleteAllMessages/deleteAllMessages.user.js

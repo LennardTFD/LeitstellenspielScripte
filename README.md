@@ -9,7 +9,7 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
 <ul>
     <li><b>Alliance Building Hider</b></li>
         <ul><li>Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte</li></ul>
-     <li><b>Assinged Workersr</b></li>
+     <li><b>Assinged Workers</b></li>
             <ul><li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li></ul>
     <li><b>Chatter to Speech</b></li>
         <ul><li>Wandelt Funksprüche zu Sprache um</li></ul>

@@ -4,6 +4,8 @@
 // @description  Spielt Sound bei erhalt einer Privaten Nachricht
 // @author       LennardTFD
 // @include      https://www.leitstellenspiel.de/
+// @include      https://www.missionchief.com/
+// @include      https://www.meldkamerspel.com/
 // @grant        none
 // @run          document-start
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MessageAudio/messageAudio.user.js

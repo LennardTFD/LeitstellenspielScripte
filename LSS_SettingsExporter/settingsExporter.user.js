@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         Settings Exporter/Importer
 // @namespace    https://leitstellenspiel.de/
-// @version      1.1
+// @version      1.2
 // @description  Exportiert/Importiert Script Einstellungen
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/profile/*
+// @match        https://www.missionchief.com/profile/*
+// @match        https://www.meldkamerspel.com/profile/*
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js
 // @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js
 // @grant        none

@@ -1,11 +1,15 @@
 // ==UserScript==
 // @name         Zugewiesenes Personal
 // @namespace    https://leitstellenspiel.de/
-// @version      1.3
+// @version      1.31
 // @description  Zeigt dem Fahrzeug zugewiesenes Personal an
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/buildings/*
 // @exclude      https://www.leitstellenspiel.de/buildings/*/*
+// @match        https://www.missionchief.com/buildings/*
+// @exclude      https://www.missionchief.com/buildings/*/*
+// @match        https://www.meldkamerspel.com/buildings/*
+// @exclude      https://www.meldkamerspel.com/buildings/*/*
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AssignedWorkers/assignedWorkers.user.js
 // @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AssignedWorkers/assignedWorkers.user.js
 // @grant        none

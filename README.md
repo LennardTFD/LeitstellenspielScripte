@@ -13,8 +13,12 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
             <ul><li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li></ul>
     <li><b>Chatter to Speech</b></li>
         <ul><li>Wandelt Funksprüche zu Sprache um</li></ul>
+    <li><b>Delete all Messages</b></li>
+            <ul><li>Wählt alle Privaten Nachrichten zum löschen aus</li></ul>
     <li><b>Mission Header Colorizer</b></li>
         <ul><li>Färbt Einsatz Kopf nach Ort/Einsatztyp</li></ul>
+    <li><b>Message Audio</b></li>
+            <ul><li>Spielt Ton bei erhalt einer Privat Nachricht</li></ul>
     <li><b>Needed Workers</b></li>
         <ul><li>Berechnet mindest Personal um Fahrzeuge voll zu besetzen</li></ul>
     <li><b>Panic Button</b></li>

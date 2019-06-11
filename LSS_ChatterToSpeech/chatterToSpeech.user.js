@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chatter to Speech
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.23
+// @version      1.3
 // @description  Einsatzfunk zu Sprache
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -219,8 +219,20 @@ var mutationObserver = new MutationObserver(function(mutations) {
                 var missionData = missionInList.parent().find(".map_position_mover");
                 //Grab Mission Name
                 missionName = (missionData.html()).split(",")[0];
-                //Grab Mission Address
-                missionAddress = (missionData.find("small").html()).split(",")[0];
+                if(missionName.includes("</small>"))
+                {
+                    var occ = missionName.indexOf("</small>");
+                    missionName = missionName.slice(occ + 9, missionName.length - 1);
+                    //Grab Mission Address
+                    missionAddress = (missionData.find("small:eq(1)").html()).split(",")[0];
+                }
+                else
+                {
+                    //Grab Mission Address
+                    missionAddress = (missionData.find("small").html()).split(",")[0];
+                }
+
+
                 //console.log(unit + ": " + missionName + " | " + missionAddress);
                 break;
             //If Status 7

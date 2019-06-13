@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Header Colorizer
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.2.75
+// @version      1.2.8
 // @description  Changes Color of Header, depending on City, Mission ID or ZIP Code
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -130,21 +130,23 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
     function createForm()
     {
         //Default Color
-        var defaultColor = "Standard Farbe: <input id='defaultColor' type='color'> Nutzen: <input type='checkbox' id='enableDefaultColor'><br>" +
-            "Transparenz: <input type='range' value='100' max='100' min='0' step='10' id='colorTransparency' style='width: 300px'><br><br>";
+        var defaultColor = "Standard Farbe: <input id='defaultColor' class='form-control' style='width: 80px;' type='color'> Nutzen: <input type='checkbox' id='enableDefaultColor'><br>" +
+            "Transparenz: <input type='range' value='100' max='100' min='0' step='10' id='colorTransparency' class='custom-range' style='width: 300px'><br><br>";
 
         //Colors for City Names
         var divCity = "<div id='cityDiv'>" +
             "<h3>Stadt Namen</h3>" +
-            "<input id='addCity' type='button' value='+ Stadt'>" +
-            "<table id='cityTable'><tr><th width='70px'>Stadt</th><th>Farbe</th><th></th></tr></table>" +
+            //"<input id='addCity' class='btn btn-default' type='button' value='+ Stadt'>" +
+            "<button id='addCity' class='btn btn-default'><i class='glyphicon glyphicon-plus'></i> Stadt</button>" +
+            "<table id='cityTable'><tr><th width='150px'>Stadt</th><th>Farbe</th><th></th></tr></table>" +
             "</div><br><br>";
 
         var divZip = "<div id='zipDiv'>" +
             "<h3>Postleitzahlen</h3>" +
             "<p>Beispiel:</p>" +
-            "<textarea disabled style='width: 150px; height: 30px;'>67892, 40892, 75241, 30142</textarea><br>" +
-            "<input id='addZip' type='button' value='+ ZIP'>" +
+            "<textarea disabled style='width: 150px; height: 30px;'>67892, 40892, 75241</textarea><br>" +
+            //"<input id='addZip' class='btn btn-default' type='button' value='+ ZIP'>" +
+            "<button id='addZip' class='btn btn-default'><i class='glyphicon glyphicon-plus'></i> Zip</button>" +
             "<table id='zipTable'>" +
             "<tr id='zipColorRow'></tr>" + //Color Row
             "<tr id='zipRow'></tr>" + //Color Row
@@ -158,7 +160,8 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
             "<h3>Mission IDs</h3>" +
             "<p>Beispiel:</p>" +
             "<textarea disabled style='width: 150px; height: 30px;'>54, 32, 145, 290, 25</textarea><br>" +
-            "<input id='addMissionColor' type='button' value='+ Farbe'>" +
+            //"<input id='addMissionColor' class='btn btn-default' type='button' value='+ Farbe'>" +
+            "<button id='addMissionColor' class='btn btn-default'><i class='glyphicon glyphicon-plus'></i> Farbe</button>" +
             "<table id='missionTable'>" +
             "<tr id='missionColorRow'></tr>" + //Color Row
             "<tr id='missionIdRow'></tr>" + //Color Row
@@ -167,16 +170,17 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
 
         var divTab = "<div id='tabDiv'>" +
             "<h3>Tab Färbung</h3>" +
-            "<input id='addTab' type='button' value='+ Tab'>" +
-            "<table id='tabTable'><tr><th width='70px'>Tab ID</th><th>Farbe</th><th></th></tr></table>" +
+            //"<input id='addTab' class='btn btn-default' type='button' value='+ Tab'>" +
+            "<button id='addTab' class='btn btn-default'><i class='glyphicon glyphicon-plus'></i> Tab</button>" +
+            "<table id='tabTable'><tr><th width='200px'>Tab ID</th><th>Farbe</th><th></th></tr></table>" +
             "</div>";
 
 
 
-        var saver = "<br><input id='saveSettings' type='button' value='Speichern'>";
+        var saver = "<br><input id='saveSettings' class='btn btn-success btn btn-lg' type='button' value='Speichern'>";
 
         //Reset Colors
-        var reseter = "<br>Sollten keine Einsätze eingefäbrt werden oder andere Fehler auftreten, kannst du hier deine Einstellungen zurücksetzen: <input type='button' id='resetSettings' value='Zurücksetzen'>";
+        var reseter = "<br>Sollten keine Einsätze eingefäbrt werden oder andere Fehler auftreten, kannst du hier deine Einstellungen zurücksetzen: <input style='color: white;' type='button' id='resetSettings' class='btn btn-danger' value='Zurücksetzen'>";
 
         //Set Content of Form
         var newWindow = $("#lightbox_box")[0];
@@ -261,14 +265,16 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
                 currID = currID + ", " + missionIDs[i];
             }
 
-            var newColorRow = "<th><input width='70px' type='color' class='missionColor' value='" + color + "'><input class='removeColor' type='button' value='- Farbe'></th>";
-            var newIdRow = "<td><textarea width='70px' class='missionId'>" + currID + "</textarea></td>";
+            //var newColorRow = "<th><input width='70px' type='color' class='missionColor' value='" + color + "'><input class='removeColor' type='button' value='- Farbe'></th>";
+            var newColorRow = "<th><input width='70px' type='color' class='missionColor form-control' style='width: 80px;' value='" + color + "'><button id='removeColor' class='removeColor btn btn-default'><i class='glyphicon glyphicon-minus'></i> Farbe</button></th>";
+            var newIdRow = "<td><textarea width='70px' class='missionId form-control'>" + currID + "</textarea></td>";
 
         }
         else
         {
-            var newColorRow = "<th><input width='70px' type='color' class='missionColor'><input class='removeColor' type='button' value='- Farbe'></th>";
-            var newIdRow = "<td><textarea width='70px' class='missionId'></textarea></td>";
+            //var newColorRow = "<th><input width='70px' type='color' class='missionColor'><input class='removeColor' type='button' value='- Farbe'></th>";
+            var newColorRow = "<th><input width='70px' type='color' class='missionColor form-control' style='width: 80px;'><button id='removeColor' class='removeColor btn btn-default'><i class='glyphicon glyphicon-minus'></i> Farbe</button></th>";
+            var newIdRow = "<td><textarea width='70px' class='missionId form-control'></textarea></td>";
         }
 
         newColorRow = $.parseHTML(newColorRow);
@@ -294,11 +300,12 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
     {
         if(cityName != null && color != null)
         {
-            var cityInput = "<tr class='city'><td><input type='text' name='city' value='" + cityName + "'></td><td><input type='color' name='color' value='" + color + "'></td><td><input class='removeCity' type='button' value='- Stadt'></td></tr>";
+            //var cityInput = "<tr class='city'><td><input type='text' name='city' value='" + cityName + "'></td><td><input type='color' name='color' value='" + color + "'></td><td><input class='removeCity' type='button' value='- Stadt'></td></tr>";
+            var cityInput = "<tr class='city'><td><input type='text' name='city' class='form-control' value='" + cityName + "'></td><td><input type='color' name='color' class='form-control' style='width: 80px;' value='" + color + "'></td><td><button class='removeCity btn btn-default'><i class='glyphicon glyphicon-minus'></i> Stadt</button></td></tr>";
         }
         else
         {
-            var cityInput = "<tr class='city'><td><input type='text' name='city'></td><td><input type='color' name='color'></td><td><input class='removeCity' type='button' value='- Stadt'></td></tr>";
+            var cityInput = "<tr class='city'><td><input type='text' name='city' class='form-control' ></td><td><input type='color' name='color' class='form-control' style='width: 80px;'></td><td><button class='removeCity btn btn-default'><i class='glyphicon glyphicon-minus'></i> Stadt</button></td></tr>";
         }
         cityInput = $.parseHTML(cityInput);
         $("#cityTable").append(cityInput);
@@ -329,14 +336,15 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
                 currZIP = currZIP + ", " + zips[i];
             }
 
-            var newColorRow = "<th><input width='70px' type='color' class='zipColor' value='" + color + "'><input class='removeZip' type='button' value='- ZIP'></th>";
-            var newZipRow = "<td><textarea width='70px' class='zip'>" + currZIP + "</textarea></td>";
+            //var newColorRow = "<th><input width='70px' type='color' class='zipColor' value='" + color + "'><input class='removeZip' type='button' value='- ZIP'></th>";
+            var newColorRow = "<th><input width='70px' type='color' class='zipColor form-control' style='width: 80px;' value='" + color + "'><button class='removeZip btn btn-default'><i class='glyphicon glyphicon-minus'></i> Zip</button></th>";
+            var newZipRow = "<td><textarea width='70px' class='zip form-control'>" + currZIP + "</textarea></td>";
 
         }
         else
         {
-            var newColorRow = "<th><input width='70px' type='color' class='zipColor'><input class='removeZip' type='button' value='- ZIP'></th>";
-            var newZipRow = "<td><textarea width='70px' class='zip'></textarea></td>";
+            var newColorRow = "<th><input width='70px' type='color' style='width: 80px;' class='zipColor form-control'><button class='removeZip btn btn-default'><i class='glyphicon glyphicon-minus'></i> Zip</button></th>";
+            var newZipRow = "<td><textarea width='70px' class='zip form-control'></textarea></td>";
         }
 
         newColorRow = $.parseHTML(newColorRow);
@@ -362,11 +370,12 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
     {
         if(tabID != null && color != null)
         {
-            var tabInput = "<tr class='tab'><td><input type='text' name='tab' value='" + tabID + "'></td><td><input type='color' name='tabColor' value='" + color + "'></td><td><input class='removeTab' type='button' value='- Tab'></td></tr>";
+            //var tabInput = "<tr class='tab'><td><input type='text' name='tab' value='" + tabID + "'></td><td><input type='color' name='tabColor' value='" + color + "'></td><td><input class='removeTab' type='button' value='- Tab'></td></tr>";
+            var tabInput = "<tr class='tab'><td><input type='text' name='tab' class='form-control' value='" + tabID + "'></td><td><input type='color' name='tabColor' class='form-control' style='width: 80px;' value='" + color + "'></td><td><button class='removeTab btn btn-default'><i class='glyphicon glyphicon-minus'></i> Tab</button></td></tr>";
         }
         else
         {
-            var tabInput = "<tr class='tab'><td><input type='text' name='tab'></td><td><input type='color' name='tabColor'></td><td><input class='removeTab' type='button' value='- Tab'></td></tr>";
+            var tabInput = "<tr class='tab'><td><input type='text' name='tab' class='form-control'></td><td><input type='color' name='tabColor' class='form-control' style='width: 80px;'></td><td><button class='removeTab btn btn-default'><i class='glyphicon glyphicon-minus'></i> Tab</button></td></tr>";
         }
         tabInput = $.parseHTML(tabInput);
         $("#tabTable").append(tabInput);

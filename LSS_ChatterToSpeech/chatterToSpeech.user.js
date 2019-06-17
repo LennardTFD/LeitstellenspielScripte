@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chatter to Speech
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.3
+// @version      1.4
 // @description  Einsatzfunk zu Sprache
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -9,20 +9,39 @@
 // @match        https://www.meldkamerspel.com/
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/chatterToSpeech.user.js
 // @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/chatterToSpeech.user.js
-// @require      https://code.responsivevoice.org/responsivevoice.js
 // @grant        none
 // ==/UserScript==
 
 var SIREN_URL = "MYAUDIOURL";
 
-var apiKeys = ["H9aKeucp", "rGxkrbXx", "Nf6P23Fg", "C24n6rzz", "KEUuZq9F", "Bm2hpREZ"];
-function randomApiSelect()
+//VOICES CHROME
+// 1 = English Male
+// 2 = English Female
+// 3 = German Female
+// 4 = English Female
+// 5 = English Female UK
+// 15 = Dutch Female
+//Get Current Page and select Language for Chatter
+var url = window.location.host;
+var lang = "";
+switch(url)
 {
-    return apiKeys[Math.floor(Math.random()*apiKeys.length)];
+    case "www.leitstellenspiel.de":
+        lang = "de-DE";
+        break;
+    case "www.missionchief.com":
+        lang = "en-US";
+        break;
+    case "www.meldkamerspel.com":
+        lang = "nl-NL";
+        break;
+    default:
+        lang = "de-DE";
+        break;
 }
 
-//Import "ResponsiveVoice" API
-$("body").append("<script src='https://code.responsivevoice.org/responsivevoice.js?key=" + randomApiSelect() + "></script>");
+
+
 //Import background siren
 $("body").append('<audio loop="false" width="0" height="0" id="sound" src="' + SIREN_URL + '" type="audio/mp3" ></audio>');
 
@@ -41,6 +60,7 @@ var wordsToPronounce = [
 ];
 
 //Phrases to randomly use for diffrent Status
+/*
 var phrases = {
     "0": ["Blitz, Blitz, Blitz. Notruf von %UNIT%", "Notruf von %UNIT%", "%UNIT% Notruf", "Unterstützung zu %UNIT%", "Unterstützung zu %ADDRESS%!"],
     "1": ["Hier %UNIT%. Wir rücken ein", "%UNIT% Status 1", "%UNIT% rückt ein", "%UNIT% sind auf dem Weg zur Wache", "%UNIT%. Einsatzstelle übergeben. Alle Einheiten können einrücken", "%UNIT%. Einsatz beendet", "%UNIT% Einsatz beendet. Wir rücken ab", "%UNIT% wieder frei"],
@@ -55,6 +75,50 @@ var phrases = {
         "%UNIT% bringt Patienten zu %BUILDING%", "%UNIT% mit Sonderrechten nach %BUILDING%", "%BUILDING% für %UNIT%", "Voranmeldung bei %BUILDING% für %UNIT%"],
     "8": ["Hier %UNIT%. Laden aus", "%UNIT% lädt aus", "%UNIT% Status 8", "Status 8 für %UNIT%"],
     "9": ["%UNIT% wartet auf Abholung", "%UNIT% steht bereit", "%UNIT% kann abgeholt werden", "%UNIT% auf Status 9"]
+};
+*/
+var phrases = {
+    "de-DE":{
+        "0": ["Blitz, Blitz, Blitz. Notruf von %UNIT%", "Notruf von %UNIT%", "%UNIT% Notruf", "Unterstützung zu %UNIT%", "Unterstützung zu %ADDRESS%!"],
+        "1": ["Hier %UNIT%. Wir rücken ein", "%UNIT% Status 1", "%UNIT% rückt ein", "%UNIT% sind auf dem Weg zur Wache", "%UNIT%. Einsatzstelle übergeben. Alle Einheiten können einrücken", "%UNIT%. Einsatz beendet", "%UNIT% Einsatz beendet. Wir rücken ab", "%UNIT% wieder frei"],
+        "2": ["%UNIT% zurück auf Wache", "%UNIT% auf Wache", "%UNIT% in der Fahrzeughalle", "%UNIT% Status 2", "%UNIT% meldet frei auf Wache"],
+        "3": ["%UNIT% auf Anfahrt", "%UNIT% rückt aus!", "%UNIT%. Wir rücken aus", "Hier %UNIT%. Wir rollen!", "%UNIT% rollt", "Hier %UNIT%. Wir rücken aus", "%UNIT% auf Anfahrt", "%UNIT% sind auf Anfahrt", "Hier %UNIT%. Sind auf Anfahrt", "%UNIT% Status 3",
+            "%UNIT% auf Anfahrt zum Einsatz", "%UNIT% aufgesessen", "%UNIT% zu %ADDRESS%", "%UNIT% auf Anfahrt zu %MISSION%", "%UNIT% fährt zu %MISSION% an %ADDRESS%", "%UNIT% verstanden", "Hier %UNIT%, verstanden", "%UNIT% zu %MISSION% an %ADDRESS%",
+            "%UNIT%, %MISSION%, %ADDRESS%", "%ADDRESS%, %UNIT%", "%MISSION% für %UNIT% an %ADDRESS%", "%UNIT%, %ADDRESS%, %MISSION%"],
+        "4": ["%UNIT% an Einsatzstelle eingetroffen!", "%UNIT% hat Einsatzstelle erreicht", "%UNIT% Status 4", "%UNIT% . Status wechsel auf die 4", "%UNIT%. Am Einsatzort eingetroffen", "%UNIT% hat %MISSION% erreicht", "%UNIT% an %ADDRESS% angekommen"],
+        "5": ["Leitstelle für %UNIT%. Kommen!", "Leitstelle für %UNIT%", "Leitstelle von %UNIT%", "Einmal Leitstelle für %UNIT%", "Sprechwunsch für %UNIT%"],
+        "6": ["%UNIT% geht außer Dienst", "%UNIT% nicht einsatzbereit", "%UNIT% nicht besetzt", "%UNIT% kann nicht ausrücken", "%UNIT% unbesetzt", "Wir machen Feierabend. %UNIT%"],
+        "7": ["Hier %UNIT%. Mit Sonderrechten ins Krankenhaus", "%UNIT% Status 7", "Hier %UNIT%. Wir wechseln auf Status 7", "Status 7 für %UNIT%", "%UNIT% hat Patienten aufgenommen", "%UNIT% wir fahren zu %BUILDING%",
+            "%UNIT% bringt Patienten zu %BUILDING%", "%UNIT% mit Sonderrechten nach %BUILDING%", "%BUILDING% für %UNIT%", "Voranmeldung bei %BUILDING% für %UNIT%"],
+        "8": ["Hier %UNIT%. Laden aus", "%UNIT% lädt aus", "%UNIT% Status 8", "Status 8 für %UNIT%"],
+        "9": ["%UNIT% wartet auf Abholung", "%UNIT% steht bereit", "%UNIT% kann abgeholt werden", "%UNIT% auf Status 9"]
+    },
+    "en-US":{
+        "0": ["Mayday! Mayday! Mayday! %UNIT%", "Emergency call %UNIT%", "%UNIT% Status 0", "Reinforcements to %UNIT%", "Reinforcements to %ADDRESS%!"],
+        "1": ["Here %UNIT%. Returning to Station", "%UNIT% Status 1", "%UNIT% ending call", "%UNIT% on way back to station", "%UNIT%. Handed over scene. All Units can head back", "%UNIT%. Scene is clear", "%UNIT% Dispatch finished", "%UNIT% available again"],
+        "2": ["%UNIT% back on Station", "%UNIT% on Station", "%UNIT% in Garage", "%UNIT% Status 2", "%UNIT% available on Station"],
+        "3": ["%UNIT% enroute", "%UNIT% heading out!", "%UNIT% is enroute", "Here %UNIT%. Heading to scene", "%UNIT% on Status 3", "%UNIT% heading to %ADDRESS%", "%UNIT% enroute to %MISSION%",
+            "%UNIT% is driving to %MISSION% at %ADDRESS%", "%UNIT% understood", "%UNIT%, copy", "%UNIT% to %MISSION% near %ADDRESS%", "%UNIT%, %MISSION%, %ADDRESS%", "%ADDRESS%, %UNIT%",
+            "%MISSION% for %UNIT% at %ADDRESS%", "%UNIT%, %ADDRESS%, %MISSION%"],
+        "4": ["%UNIT% arrived!", "%UNIT% on Scene", "%UNIT% Status 4", "%UNIT% . Changing to Status 4", "%UNIT%. We are on Scene", "%UNIT% arrived at %MISSION%", "%UNIT% on %ADDRESS%"],
+        "5": ["Dispatch. How copy?", "Dispatch for %UNIT%", "%UNIT% calling Dispatch", "%UNIT% requesting Dispatch"],
+        "6": ["%UNIT% out of order", "%UNIT% unavailable", "%UNIT% unoccupied", "%UNIT% no can do!", "%UNIT% on Status 6"],
+        "7": ["Here %UNIT%. Heading to hospital", "%UNIT% Status 7", "Here %UNIT%. We are changing to Status 7", "Status 7 for %UNIT%", "%UNIT% picked up patienten", "%UNIT% heading to %BUILDING%",
+            "%UNIT% is transporting patient to %BUILDING%", "%UNIT% transporting to %BUILDING%", "%BUILDING% for %UNIT%", "Registration at %BUILDING% for %UNIT%"],
+        "8": ["Here %UNIT%. Unloading", "%UNIT% is unloading", "%UNIT% Status 8", "Status 8 for %UNIT%"],
+        "9": ["%UNIT% awaiting pickup", "%UNIT% ready for pickup", "%UNIT% can be picked up", "%UNIT% on Status 9"]
+    },
+    "nl-NL": {
+        "0": [""],
+        "1": [""],
+        "2": [""],
+        "4": [""],
+        "5": [""],
+        "6": [""],
+        "7": [""],
+        "8": [""],
+        "9": [""]
+    }
 }
 
 //Voices used. Duplicate voice sets increase their frequency
@@ -91,8 +155,8 @@ function chatParser(missionInfo)
     unit = unit.replace(/\//gi, " ");
     unit = unit.replace(/-/gi, " ");
 
-    //Select a random phrase from phrases list
-    var pharse = phrases[status][Math.floor(Math.random()*phrases[status].length)];
+    //Select a random phrase from phrases list depending of Language
+    var pharse = phrases[lang][status][Math.floor(Math.random()*phrases[lang][status].length)];
 
     //Replace Unit Wildcard with calling unit
     pharse = pharse.replace("%UNIT%", unit);
@@ -135,7 +199,7 @@ function chatParser(missionInfo)
 function workOffQueue()
 {
     //If there are unfinished chatter messages AND there is currently no other speech
-    if(chatterQueue.length > 0 && !responsiveVoice.isPlaying() && !isSpeaking)
+    if(chatterQueue.length > 0 && !isSpeaking)
     {
         //Make queue smaller if there is to much old chatter
         if(chatterQueue.length > 10)
@@ -177,12 +241,24 @@ function stopBackground()
 
 function chatter(msg)
 {
-    //select random speed
+
+    var t2s = new SpeechSynthesisUtterance();
+    t2s.text = msg;
+    t2s.lang = lang;
+
     var speed = parseFloat((Math.random() * (0.0 - 0.1500) + 0.0200).toFixed(4));
+    t2s.rate = 1.2 + speed;
+
+    t2s.onend = () => {stopBackground()};
+    t2s.onstart = () => {isSpeaking = true;};
+
+    //select random speed
+
     //Select random speeker
     var talker = voices[Math.floor(Math.random()*voices.length)];
     //Play chatter Audio
-    responsiveVoice.speak(msg, talker, {rate: (1.2 + speed), onStart: function(){isSpeaking = true}, onend: stopBackground});
+    //responsiveVoice.speak(msg, talker, {rate: (1.2 + speed), onStart: function(){isSpeaking = true}, onend: stopBackground});
+    speechSynthesis.speak(t2s);
 }
 
 var mutationObserver = new MutationObserver(function(mutations) {

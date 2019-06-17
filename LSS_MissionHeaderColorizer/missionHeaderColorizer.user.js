@@ -184,7 +184,7 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
 
         //Set Content of Form
         var newWindow = $("#lightbox_box")[0];
-        var content = "<div id='colorWrapper' style='margin: 10px'>" + defaultColor + divCity + divZip + divMission + divTab + saver + reseter + "</div>";
+        var content = "<div id='colorWrapper' class='panel-body' style='margin: 10px'>" + defaultColor + divCity + divZip + divMission + divTab + saver + reseter + "</div>";
         $(newWindow).html(content);
 
 

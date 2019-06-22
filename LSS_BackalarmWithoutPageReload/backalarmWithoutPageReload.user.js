@@ -26,12 +26,12 @@
             var selector = $(t).parent().parent();
             if(url.includes("/gefangener/"))
             {
-                selector = selector.prev().remove();
-                selector = selector.remove();
+                selector.prev().remove();
+                selector.remove();
             }
             else
             {
-                selector = selector.parent().remove();
+                selector.parent().remove();
             }
         })
     })

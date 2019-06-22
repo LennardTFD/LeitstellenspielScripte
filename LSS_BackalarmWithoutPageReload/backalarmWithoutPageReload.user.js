@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         BackalarmWithoutPageReload
 // @namespace    http://tampermonkey.net/
-// @version      1.0
+// @version      1.1
 // @description  No Page reload when backalarming units
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/missions/*
@@ -11,7 +11,7 @@
 // ==/UserScript==
 (function() {
     'use strict';
-    var backAlarmBtns = $("a[href*='/vehicles/'][href*='/backalarm?return=mission']");
+    var backAlarmBtns = $("a[href*='/vehicles/'][href*='/backalarm?return=mission'], a[href*='/gefangener/']");
     backAlarmBtns.each((e,t) => {
         //Remember URL to back alarm unit
         var url = $(t).attr("href");
@@ -23,7 +23,16 @@
                 url: url
             });
             //Remove Vehicle Element from List
-            $(t).parent().parent().parent().remove();
+            var selector = $(t).parent().parent();
+            if(url.includes("/gefangener/"))
+            {
+                selector = selector.prev().remove();
+                selector = selector.remove();
+            }
+            else
+            {
+                selector = selector.parent().remove();
+            }
         })
     })
 })();

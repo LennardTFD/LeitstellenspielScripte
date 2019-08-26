@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Header Colorizer
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.2.8
+// @version      1.2.9
 // @description  Changes Color of Header, depending on City, Mission ID or ZIP Code
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -580,7 +580,10 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
         }
         zip = zip.slice(zipStart + 2);
         var zipEnd = zip.indexOf(" ");
-        zip = zip.slice(0, zipEnd);
+        if(zipEnd != -1)
+        {
+            zip = zip.slice(0, zipEnd);
+        }
         return zip;
     }
 
@@ -658,7 +661,7 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
             assignedBgColor = assignedBgColor.replace(")", "");
             assignedBgColor = assignedBgColor.split(",");
             assignedBgColor[3] = "1";
-            console.log(assignedBgColor);
+            //console.log(assignedBgColor);
 
             if(assignedBgColor.length > 1) {
                 if (contrast([255, 255, 255], assignedBgColor) < 4.5) {

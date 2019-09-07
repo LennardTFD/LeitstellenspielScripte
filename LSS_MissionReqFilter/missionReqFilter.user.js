@@ -74,7 +74,7 @@ function filter(fw, rd, pol, thw, water) {
     {
         return new Promise(resolve => {
             $.ajax({
-                url: "https://raw.githubusercontent.com/LSS-Manager/lss-manager-v3/dev/modules/lss-missionHelper/missions.de.json",
+                url: "https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqFilter/missiondata.de.json",
                 method: "GET",
             }).done((res) => {
                 resolve(JSON.parse(res));
@@ -87,7 +87,7 @@ function filter(fw, rd, pol, thw, water) {
     {
 
         missions.each((e, t) => {
-            // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung werk = Werk, sek = SEK, mek = MEK
+            // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
             let mission = $(t);
             let missionId = mission.attr("mission_type_id");
             let req = requirements[missionId].stations;

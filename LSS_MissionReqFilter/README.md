@@ -1,7 +1,6 @@
-<h1>LSS Mission Header Colorizer</h1>
+<h1>LSS Mission Filter by Requirements</h1>
 <img height="350px" src="preview.png" >
-Dieses Script färbt den Einsatzkopf und die AAO Tabs.<br>
-Gefärbt wird in folgender Hirachie<br><br>
+Dieses Script filtert <br><br>
 
 1. Einsatz ID<br>
 2. Postleitzahl<br>

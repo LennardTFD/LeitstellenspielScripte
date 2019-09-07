@@ -23,6 +23,10 @@ function filterElement(mission, arr, n = undefined) {
     let typeIndex = types.length - n;
     let type = types[typeIndex];
 
+    if(mission.attr("class").includes("mission_deleted"))
+    {
+        mission.remove();
+    }
 
 
     if(n < 1)
@@ -203,14 +207,18 @@ function filter(fw, rd, pol, thw, water) {
 
         var mutationObserver = new MutationObserver(function(mutations) {
             mutations.forEach(function(mutation) {
-                applyFilter();
-                filter(
-                    $("#req_select_fw").attr("status"),
-                    $("#req_select_rd").attr("status"),
-                    $("#req_select_pol").attr("status"),
-                    $("#req_select_thw").attr("status"),
-                    $("#req_select_water").attr("status")
-                );
+                if(!$("#search_input_field_missions").is(":focus"))
+                {
+                    applyFilter();
+                    filter(
+                        $("#req_select_fw").attr("status"),
+                        $("#req_select_rd").attr("status"),
+                        $("#req_select_pol").attr("status"),
+                        $("#req_select_thw").attr("status"),
+                        $("#req_select_water").attr("status")
+                    );
+                }
+
             });
         });
         mutationObserver.observe($("#mission_list")[0], {

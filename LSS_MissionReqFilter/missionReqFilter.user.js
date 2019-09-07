@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Filter by Requirements
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.0
+// @version      1.1
 // @description  Filters missions by required Stations
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -201,6 +201,15 @@ function filter(fw, rd, pol, thw, water) {
         createFilterBtns();
         requirements = await getRequirements();
         applyFilter();
+
+        var mutationObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                applyFilter();
+            });
+        });
+        mutationObserver.observe($("#mission_list")[0], {
+            childList: true
+        });
 
     }
 

@@ -477,6 +477,7 @@ else
             setTimeout(() => {
                 $(bar).attr("aria-valuenow", ++currProgress);
                 $(bar).css("width", ((currProgress / max) * 100) + "%");
+                $(bar).text(poiName + " (" + currProgress + " / " + poiAmount +  ")");
                 createPOIs(poiId, t);
 
                 //console.log("POI Amount:", poiAmount, "| E:", e);

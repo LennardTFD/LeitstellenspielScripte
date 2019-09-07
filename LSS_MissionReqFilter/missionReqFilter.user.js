@@ -1,14 +1,14 @@
 // ==UserScript==
-// @name         Mission Sort by Requirements
+// @name         Mission Filter by Requirements
 // @namespace    https://www.leitstellenspiel.de/
 // @version      1.0
-// @description  Sort missions by required Stations
+// @description  Filters missions by required Stations
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
 // @match        https://www.missionchief.com/
 // @match        https://www.meldkamerspel.com/
-// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqSort/missionReqSort.user.js
-// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqSort/missionReqSort.user.js
+// @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqFilter/missionReqFilter.user.js
+// @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqFilter/missionReqFilter.user.js
 // @grant        none
 // ==/UserScript==
 

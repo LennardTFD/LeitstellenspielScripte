@@ -65,6 +65,12 @@ function filterElement(mission, arr, n = undefined) {
 function filter(fw, rd, pol, thw, water) {
 
     let missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
+    let deletedMissions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable mission_deleted']");
+
+    deletedMissions.each((e, t) => {
+       $(t).remove();
+    });
+
     missions.each((e, t) => {
         let mission = $(t);
         //console.log(mission);
@@ -96,7 +102,6 @@ function filter(fw, rd, pol, thw, water) {
         missions.each((e, t) => {
             // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
             let mission = $(t);
-            let missionId = mission.attr("mission_type_id");
             mission.removeAttr("fw");
             mission.removeAttr("rd");
             mission.removeAttr("pol");

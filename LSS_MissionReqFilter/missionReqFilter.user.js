@@ -23,9 +23,14 @@ function filterElement(mission, arr, n = undefined) {
     let typeIndex = types.length - n;
     let type = types[typeIndex];
 
+    console.log("FilterElement()");
+    console.log(mission.attr("class"));
     if(mission.attr("class").includes("mission_deleted"))
     {
+        console.log(mission);
+        console.log("Mission is finished!");
         mission.remove();
+        return;
     }
 
 
@@ -72,8 +77,6 @@ function filter(fw, rd, pol, thw, water) {
 
     let requirements;
 
-    let  missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
-
     function getRequirements()
     {
         return new Promise(resolve => {
@@ -86,10 +89,27 @@ function filter(fw, rd, pol, thw, water) {
         });
     }
 
+    function removeFilter()
+    {
+        let missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
+
+        missions.each((e, t) => {
+            // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
+            let mission = $(t);
+            let missionId = mission.attr("mission_type_id");
+            mission.removeAttr("fw");
+            mission.removeAttr("rd");
+            mission.removeAttr("pol");
+            mission.removeAttr("thw");
+            mission.removeAttr("water");
+        });
+
+    }
+
     //Apply needed Stations to mission
     async function applyFilter()
     {
-
+        let missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
         missions.each((e, t) => {
             // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
             let mission = $(t);
@@ -209,6 +229,7 @@ function filter(fw, rd, pol, thw, water) {
             mutations.forEach(function(mutation) {
                 if(!$("#search_input_field_missions").is(":focus"))
                 {
+                    removeFilter();
                     applyFilter();
                     filter(
                         $("#req_select_fw").attr("status"),

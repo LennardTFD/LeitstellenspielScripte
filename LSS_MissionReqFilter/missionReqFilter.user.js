@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Filter by Requirements
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.11
+// @version      1.11.1
 // @description  Filters missions by required Stations
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -23,12 +23,12 @@ function filterElement(mission, arr, n = undefined) {
     let typeIndex = types.length - n;
     let type = types[typeIndex];
 
-    console.log("FilterElement()");
-    console.log(mission.attr("class"));
+    //console.log("FilterElement()");
+    //console.log(mission.attr("class"));
     if(mission.attr("class").includes("mission_deleted"))
     {
-        console.log(mission);
-        console.log("Mission is finished!");
+        //console.log(mission);
+        //console.log("Mission is finished!");
         mission.remove();
         return;
     }

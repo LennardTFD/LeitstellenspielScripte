@@ -1,6 +1,5 @@
-<h1>LSS Alliance Building Hider</h1>
-Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte
-
+<h1>LSS Mission Marker Glow</h1>
+Fügt Mission Markern einen leuchtenden Schein hinzu
 <hr>
 
-<h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user/8497-locke/">Locke</a></h6>
+<h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user//">COMMING SOON</a></h6>

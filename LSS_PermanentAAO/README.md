@@ -1,5 +1,5 @@
-<h1>LSS Permanentn AAO</h1>
-COMING SOON
+<h1>LSS Permanennt AAO</h1>
+Selects last used AAO on page reload
 
 <hr>
 

@@ -37,6 +37,9 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_NeededWorkers">
     Needed Workers</a></b></li>
         <ul><li>Berechnet mindest Personal um Fahrzeuge voll zu besetzen</li></ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_PermanentAAO">
+        Permanent AAO</a></b></li>
+            <ul><li>Wählt die zuletzt genutzte AAO Kategorie als Start Tab</li></ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_PanicButton">
     Panic Button</a></b></li>
         <ul><li>Alarmiert Rettungsdienst von Verbandseinsätzen zurück,<br>

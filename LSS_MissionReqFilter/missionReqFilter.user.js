@@ -9,8 +9,18 @@
 // @match        https://www.meldkamerspel.com/
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqFilter/missionReqFilter.user.js
 // @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqFilter/missionReqFilter.user.js
-// @grant        none
+// @grant        GM_addStyle
 // ==/UserScript==
+
+GM_addStyle(`
+.filterShow {
+    display: block;
+}
+
+.filterHide {
+    display: none;
+}
+`);
 
 function filterElement(mission, arr, n = undefined) {
     let types = ["fw", "rd", "pol", "thw", "water"];
@@ -49,14 +59,27 @@ function filterElement(mission, arr, n = undefined) {
     )
     {
         //Show Element, start recursion for next Filter
-        mission.css("display", "block");
+        //mission.css("display", "block");
+        //if((mission.css("display") != "none" && mission.attr("class").includes("filterHide"))|| mission.css("display") == undefined)
+        //if(mission.attr("class").includes("filterHide") && !mission.attr("class").includes("mission_deleted"))
+        //{
+            mission.addClass("filterShow");
+            mission.removeClass("filterHide");
+       // }
+        //else
+       // {
+            //mission.remove();
+        //}
+
         filterElement(mission, arr, n - 1);
         //return false;
     }
     else
     {
         //Hide Element
-        mission.css("display", "none");
+        //mission.css("display", "none");
+        mission.addClass("filterHide");
+        mission.removeClass("filterShow");
         //return true;
     }
 }
@@ -64,8 +87,8 @@ function filterElement(mission, arr, n = undefined) {
 //function filter(fw, rd, pol, n = 3) {
 function filter(fw, rd, pol, thw, water) {
 
-    let missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
-    let deletedMissions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable mission_deleted']");
+    let missions = $("#mission_list").find("div[class*='missionSideBarEntry missionSideBarEntrySearchable']");
+    let deletedMissions = $("#mission_list").find("div[class*='mission_deleted']");
 
     deletedMissions.each((e, t) => {
        $(t).remove();
@@ -97,7 +120,7 @@ function filter(fw, rd, pol, thw, water) {
 
     function removeFilter()
     {
-        let missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
+        let missions = $("#mission_list").find("div[class*='missionSideBarEntry missionSideBarEntrySearchable']");
 
         missions.each((e, t) => {
             // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
@@ -114,7 +137,7 @@ function filter(fw, rd, pol, thw, water) {
     //Apply needed Stations to mission
     async function applyFilter()
     {
-        let missions = $("#mission_list").find("div[class='missionSideBarEntry missionSideBarEntrySearchable']");
+        let missions = $("#mission_list").find("div[class*='missionSideBarEntry missionSideBarEntrySearchable']");
         missions.each((e, t) => {
             // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
             let mission = $(t);

@@ -45,14 +45,20 @@ switch(url)
 }
 
 
-
+let translations;
 async function init() {
     if(translationLanguage != "")
     {
-        let translations = await $.getJSON('https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/translations.json', function(data) {
-            return data;
+        console.log("Getting Translation Data");
+        translations = new Promise(resolve => {
+            $.ajax({
+                url: "https://raw.githubusercontent.com/LennardTFD/LeitstellenspielScripte/master/LSS_ChatterToSpeech/translations.json",
+                method: "GET",
+            }).done((res) => {
+                console.log("Got Data!");
+                resolve(JSON.parse(res));
+            });
         });
-        console.log(translations);
     }
 }
 
@@ -160,9 +166,14 @@ function chatParser(missionInfo)
     var address = missionInfo[2];
     var mission = missionInfo[3];
 
+    console.log(translationLanguage);
+    console.log(mission);
+    console.log(lang);
     if(translationLanguage != "")
     {
+        console.log(translations);
         mission = translations[lang][translationLanguage][mission];
+        console.log(mission);
     }
 
     var building = missionInfo[4];

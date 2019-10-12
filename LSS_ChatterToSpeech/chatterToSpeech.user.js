@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chatter to Speech
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.5
+// @version      1.6
 // @description  Einsatzfunk zu Sprache
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -44,21 +44,24 @@ switch(url)
         break;
 }
 
+async function getTranslations()
+{
+    return new Promise(resolve => {
+        $.ajax({
+            url: "https://raw.githubusercontent.com/LennardTFD/LeitstellenspielScripte/master/LSS_ChatterToSpeech/translations.json",
+            method: "GET",
+        }).done((res) => {
+            console.log("Got Data!");
+            resolve(JSON.parse(res));
+        });
+    });
+}
 
 let translations;
 async function init() {
     if(translationLanguage != "")
     {
-        console.log("Getting Translation Data");
-        translations = new Promise(resolve => {
-            $.ajax({
-                url: "https://raw.githubusercontent.com/LennardTFD/LeitstellenspielScripte/master/LSS_ChatterToSpeech/translations.json",
-                method: "GET",
-            }).done((res) => {
-                console.log("Got Data!");
-                resolve(JSON.parse(res));
-            });
-        });
+        translations = await getTranslations();
     }
 }
 
@@ -166,14 +169,14 @@ function chatParser(missionInfo)
     var address = missionInfo[2];
     var mission = missionInfo[3];
 
-    console.log(translationLanguage);
-    console.log(mission);
-    console.log(lang);
+
     if(translationLanguage != "")
     {
-        console.log(translations);
-        mission = translations[lang][translationLanguage][mission];
-        console.log(mission);
+        let newMission = translations[lang][translationLanguage][mission];
+        if(newMission != undefined)
+        {
+            mission = newMission;
+        }
     }
 
     var building = missionInfo[4];

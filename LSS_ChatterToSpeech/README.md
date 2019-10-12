@@ -9,7 +9,7 @@ Es stehen folgende Wildcards zur Verfügung:<br><br>
 
 |   Wildcard    |   Formatierung                |
 | ------------- | ----------------------------- |
-|   %USER%      |   Funkrufname der Einheit     |
+|   %UNIT%      |   Funkrufname der Einheit     |
 |   %MISSION%   |   Name des Einatzes           |
 |   %ADDRESS%   |   Addresse des Einsatzes      |
 |   %BUILDING%  |   Name des Krankenhauses/Zelle **(Status 7)**     |
@@ -21,7 +21,7 @@ Es stehen folgende Wildcards zur Verfügung:<br><br>
 
 <hr>
 
-<h6>Die Text2Speech API stammt von <a href="https://responsivevoice.com/">Repsonsive Voice</a></h6>
+<h6>Thanks to <a href="https://forum.leitstellenspiel.de/cms/index.php?user/11547-badantegr/">BadanteGR</a> Italian mission Translation</h6>
 <hr>
 
 <h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user/7620-janoe/">JaNoe</a></h6>

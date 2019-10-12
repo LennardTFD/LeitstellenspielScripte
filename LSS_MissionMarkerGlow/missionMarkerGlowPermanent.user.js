@@ -16,11 +16,8 @@
 (function() {
     'use strict';
     $("<style type='text/css'> " +
-        ".leaflet-marker-icon[src*='red']{ filter: drop-shadow(0px 0px 8px red)}" +
-        ".leaflet-marker-icon[src*='yellow']{ filter: drop-shadow(0px 0px 8px yellow)} " +
-        ".leaflet-marker-icon[src*='green']{ filter: drop-shadow(0px 0px 8px green)} " +
-        ".leaflet-marker-icon[src*='rot']{ filter: drop-shadow(0px 0px 8px red)}" +
-        ".leaflet-marker-icon[src*='gelb']{ filter: drop-shadow(0px 0px 8px yellow)} " +
-        ".leaflet-marker-icon[src*='gruen']{ filter: drop-shadow(0px 0px 8px green)} " +
+        ".leaflet-marker-icon[src*='red'], .leaflet-marker-icon[src*='rot']{ filter: drop-shadow(0px 0px 8px red)}" +
+        ".leaflet-marker-icon[src*='yellow'], .leaflet-marker-icon[src*='gelb']{ filter: drop-shadow(0px 0px 8px yellow)} " +
+        ".leaflet-marker-icon[src*='green'], .leaflet-marker-icon[src*='gruen']{ filter: drop-shadow(0px 0px 8px green)} " +
         "</style>").appendTo("head");
 })();

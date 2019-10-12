@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chatter to Speech
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.4
+// @version      1.5
 // @description  Einsatzfunk zu Sprache
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -13,6 +13,7 @@
 // ==/UserScript==
 
 var SIREN_URL = "MYAUDIOURL";
+var translationLanguage = ""; //Empty, IT
 
 //VOICES CHROME
 // 1 = English Male
@@ -32,14 +33,24 @@ switch(url)
     case "www.missionchief.com":
         lang = "en-US";
         break;
+    case "www.missionchief.co.uk":
+        lang = "en-GB";
+        break;
     case "www.meldkamerspel.com":
         lang = "nl-NL";
         break;
     default:
-        lang = "de-DE";
+        lang = "en-US";
         break;
 }
 
+if(translationLanguage != "")
+{
+    let translations = $.getJSON('https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/translations.json', function(data) {
+        return data;
+    });
+    console.log(translations);
+}
 
 
 //Import background siren
@@ -121,6 +132,11 @@ var phrases = {
     }
 }
 
+////////////////////////////Duplicating Pharses
+
+phrases["en-GB"] = phrases["en-US"];
+
+////////////////////////////////////////////////
 //Voices used. Duplicate voice sets increase their frequency
 var voices = ["Deutsch Male", "Deutsch Male", "Deutsch Female"];
 
@@ -138,6 +154,12 @@ function chatParser(missionInfo)
     var status = missionInfo[1];
     var address = missionInfo[2];
     var mission = missionInfo[3];
+
+    if(translationLanguage != "")
+    {
+        mission = translations[lang][translationLanguage][mission];
+    }
+
     var building = missionInfo[4];
 
     if(String(parseInt(address)).length == 5)

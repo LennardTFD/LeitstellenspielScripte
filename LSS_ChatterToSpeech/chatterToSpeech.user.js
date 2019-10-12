@@ -44,14 +44,19 @@ switch(url)
         break;
 }
 
-if(translationLanguage != "")
-{
-    let translations = $.getJSON('https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/translations.json', function(data) {
-        return data;
-    });
-    console.log(translations);
+
+
+async function init() {
+    if(translationLanguage != "")
+    {
+        let translations = await $.getJSON('https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/translations.json', function(data) {
+            return data;
+        });
+        console.log(translations);
+    }
 }
 
+init();
 
 //Import background siren
 $("body").append('<audio loop="false" width="0" height="0" id="sound" src="' + SIREN_URL + '" type="audio/mp3" ></audio>');
@@ -361,3 +366,4 @@ mutationObserver.observe($("#radio_messages")[0], {
 mutationObserver.observe($("#radio_messages_important")[0], {
     childList: true
 });
+

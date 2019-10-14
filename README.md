@@ -4,56 +4,118 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
 <a href="http://missionchief.com/">Missionchief</a> und
 <a href="https://www.meldkamerspel.com/">Meldkamerspel</a>
 
-<h4>Zu finden sind folgende Scripte:</h3>
+<h3>Zu finden sind folgende Scripte:</h3>
 
 <ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_AllianceBuildingHider">
-    Alliance Building Hider</a></b></li>
-        <ul><li>Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte</li></ul>
+        Alliance Building Hider</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AllianceBuildingHider/allianceBuildingHider.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_AssignedWorkers">
-    Assinged Workers</a></b></li>
-        <ul><li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li></ul>
-    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_BackalarmWithoutPageReload">
-    Backalarm without page reload</a></b></li>
-        <ul><li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li></ul>
+        Assinged Workers</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AssignedWorkers/assignedWorkers.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li>
+    </ul>
+    <li><b><a
+            href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_BackalarmWithoutPageReload">
+        Backalarm without page reload</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_BackalarmWithoutPageReload/backalarmWithoutPageReload.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_BuildingS6">
-        Building S6</a></b></li>
-            <ul><li>Setzt gesamte Wache auf Status 2/6</li></ul>
+        Building S6</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_BuildingS6/buildingS6.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Setzt gesamte Wache auf Status 2/6</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_ChatterToSpeech">
-    Chatter to Speech</a></b></li>
-        <ul><li>Wandelt Funksprüche zu Sprache um</li></ul>
+        Chatter to Speech</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ChatterToSpeech/chatterToSpeech.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Wandelt Funksprüche zu Sprache um</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_DeleteAllMessages">
-    Delete all Messages</a></b></li>
-        <ul><li>Wählt alle Privaten Nachrichten zum löschen aus</li></ul>
+        Delete all Messages</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_DeleteAllMessages/deleteAllMessages.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Wählt alle Privaten Nachrichten zum löschen aus</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_MessageAudio">
-        Message Audio</a></b></li>
-            <ul><li>Spielt Ton bei erhalt einer Privat Nachricht</li></ul>
+        Message Audio</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MessageAudio/messageAudio.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Spielt Ton bei erhalt einer Privat Nachricht</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_MissionHeaderColorizer">
-    Mission Header Colorizer</a></b></li>
-        <ul><li>Färbt Einsatz Kopf nach Ort/Einsatztyp</li></ul>
+        Mission Header Colorizer</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionHeaderColorizer/missionHeaderColorizer.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Färbt Einsatz Kopf nach Ort/Einsatztyp</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_MissionReqFilter">
-        Mission Requirement Filter</a></b></li>
-            <ul><li>Filtert Einsätze anhand benötigter Wachen</li></ul>
+        Mission Requirement Filter</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MissionReqFilter/missionReqFilter.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Filtert Einsätze anhand benötigter Wachen</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_NeededWorkers">
-    Needed Workers</a></b></li>
-        <ul><li>Berechnet mindest Personal um Fahrzeuge voll zu besetzen</li></ul>
-    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_PermanentAAO">
-        Permanent AAO</a></b></li>
-            <ul><li>Wählt die zuletzt genutzte AAO Kategorie als Start Tab</li></ul>
+        Needed Workers</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_NeededWorkers/neededWorkers.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Berechnet mindest Personal um Fahrzeuge voll zu besetzen</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_PanicButton">
-    Panic Button</a></b></li>
-        <ul><li>Alarmiert Rettungsdienst von Verbandseinsätzen zurück,<br>
-        verabschiedet sich aus dem Verbandschat und loggt sich dann aus</li></ul>
+        Panic Button</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_PanicButton/panicButton.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Alarmiert Rettungsdienst von Verbandseinsätzen zurück,<br>
+            verabschiedet sich aus dem Verbandschat und loggt sich dann aus
+        </li>
+    </ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_PermanentAAO">
+        Permanent AAO</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_PermanentAAO/permanentAAO.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Wählt die zuletzt genutzte AAO Kategorie als Start Tab</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_POIGenerator">
-        POI Generator</a></b></li>
-            <ul><li>Erstellt POIs auf der LSS Karte anhand von real Standorten</li></ul>
+        POI Generator</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_POIGenerator/poiGenerator.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Erstellt POIs auf der LSS Karte anhand von real Standorten</li>
+    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_SettingsExporter">
-    Settings Exporter</a></b></li>
-        <ul><li>Exportiert Script Einstellungen aus dem Browser</li></ul>
+        Settings Exporter</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Exportiert Script Einstellungen aus dem Browser</li>
+    </ul>
     <!--<li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_StationLocator">
         Station Locator</a></b></li>
             <ul><li>Makiert ungebaute Wachen auf Karte, nach real Standorten (Unfinished)</li></ul>-->
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_VehicleCounter">
-    Vehicle Counter</a></b></li>
-        <ul><li>Zählt die Anzahl an Fahrzeugen bei der Einsatzstelle</li></ul>
+        Vehicle Counter</a></b>
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_VehicleCounter/vehicleCounter.user.js">
+            Installieren</a></li>
+    <ul>
+        <li>Zählt die Anzahl an Fahrzeugen bei der Einsatzstelle</li>
+    </ul>
 </ul>

@@ -106,6 +106,10 @@ else
 
     function setupBtnListener()
     {
+        if(disable)
+        {
+            return;
+        }
         $( "#build_new_poi" ).click(function() {
             //console.log("POI is clicked!");
             let loader = setInterval(() => {
@@ -119,7 +123,7 @@ else
             }, 200);
         });
     }
-    
+    const disable = true;
     async function requestPOIsInRange() {
         //console.log("Starting generation!");
         let radius = $("#poiGeneratorRange").val();

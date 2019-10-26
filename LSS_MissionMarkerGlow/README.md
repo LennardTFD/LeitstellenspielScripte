@@ -2,4 +2,4 @@
 Fügt Mission Markern einen leuchtenden Schein hinzu
 <hr>
 
-<h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user//">COMMING SOON</a></h6>
+<h6>Diese Idee stammt von <a href="https://forum.leitstellenspiel.de/cms/index.php?user/9109-keks192221/">keks192221</a></h6>

@@ -8569,5 +8569,27 @@
             "rth": 10,
             "specialisation": "Unfallchirurgie"
         }
+    },
+    "485": {
+        "name": "Brand mehrerer E-Autos in Auslieferungshalle",
+        "stations": {
+            "0": 6,
+            "2": 1,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 4,
+            "werk": 1,
+            "tm": 1,
+            "ulf": 2,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2,
+            "mess": 1,
+            "atem": 1,
+            "dekon": 1,
+            "sw": 1
+        },
+        "credits": 3700
     }
 }

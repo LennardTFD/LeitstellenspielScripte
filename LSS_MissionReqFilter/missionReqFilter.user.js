@@ -110,10 +110,12 @@ function filter(fw, rd, pol, thw, water) {
     {
         return new Promise(resolve => {
             $.ajax({
-                url: "https://raw.githubusercontent.com/LennardTFD/LeitstellenspielScripte/master/LSS_MissionReqFilter/missiondata.de.json",
+                url: "https://lssm.ledbrain.de/api/missions.php",
+                //url: "https://raw.githubusercontent.com/LennardTFD/LeitstellenspielScripte/master/LSS_MissionReqFilter/missiondata.de.json",
                 method: "GET",
             }).done((res) => {
-                resolve(JSON.parse(res));
+                //resolve(JSON.parse(res));
+                resolve(res);
             });
         });
     }

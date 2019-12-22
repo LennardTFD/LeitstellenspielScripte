@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Filter by Requirements
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.11.1
+// @version      1.12
 // @description  Filters missions by required Stations
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -110,7 +110,7 @@ function filter(fw, rd, pol, thw, water) {
     {
         return new Promise(resolve => {
             $.ajax({
-                url: "https://raw.githubusercontent.com/LennardTFD/LeitstellenspielScripte/master/LSS_MissionReqFilter/missiondata.de.json",
+                url: "https://lssm.ledbrain.de/api/missions.php",
                 method: "GET",
             }).done((res) => {
                 resolve(JSON.parse(res));

@@ -108,6 +108,13 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     <ul>
         <li>Exportiert Script Einstellungen aus dem Browser</li>
     </ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_RemainingCredits">
+            Remaining Credits</a></b>
+            <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_RemainingCredits/remainingCredits.user.js">
+                [Installieren]</a></li>
+        <ul>
+            <li>Berechnet die zu verdienenden Credits aus der aktuellen Einsatzliste</li>
+        </ul>
     <!--<li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_StationLocator">
         Station Locator</a></b></li>
             <ul><li>Makiert ungebaute Wachen auf Karte, nach real Standorten (Unfinished)</li></ul>-->
@@ -119,3 +126,7 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
         <li>Zählt die Anzahl an Fahrzeugen bei der Einsatzstelle</li>
     </ul>
 </ul>
+
+<hr>
+
+<h6>Viele meiner Scripte verwenden eine API von KBOE2. <br>Vielen Dank an Jan für die Erlaubnis hierfür</h6>

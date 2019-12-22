@@ -113,7 +113,8 @@ function filter(fw, rd, pol, thw, water) {
                 url: "https://lssm.ledbrain.de/api/missions.php",
                 method: "GET",
             }).done((res) => {
-                resolve(JSON.parse(res));
+                //resolve(JSON.parse(res));
+                resolve(res);
             });
         });
     }

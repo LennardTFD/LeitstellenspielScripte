@@ -8355,5 +8355,241 @@
         "percentages": {
             "dlk": 50
         }
+    },
+    "476": {
+        "name": "Angefahrener Radfahrer",
+        "stations": {
+            "2": 1,
+            "6": 1
+        },
+        "vehicles": {
+            "fustw": 1
+        },
+        "credits": 300,
+        "patients": {
+            "max": 1,
+            "min": 1,
+            "transport": 70,
+            "nef": 30,
+            "rth": 15,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "477": {
+        "name": "Baum auf Zug",
+        "stations": {
+            "0": 11,
+            "2": 9,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 5,
+            "rw": 2,
+            "oel": 1,
+            "hoehen": 1,
+            "dlk": 1,
+            "fwk": 1,
+            "elw1": 2,
+            "elw2": 1,
+            "fustw": 2
+        },
+        "credits": 300,
+        "patients": {
+            "max": 20,
+            "transport": 50,
+            "nef": 30,
+            "rth": 5,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "478": {
+        "name": "Baum auf Zug",
+        "stations": {
+            "0": 11,
+            "2": 9,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 5,
+            "rw": 2,
+            "oel": 1,
+            "hoehen": 1,
+            "dlk": 1,
+            "fwk": 1,
+            "elw1": 2,
+            "elw2": 1,
+            "fustw": 2
+        },
+        "credits": 300,
+        "patients": {
+            "max": 20,
+            "transport": 50,
+            "nef": 30,
+            "rth": 5,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "479": {
+        "name": "Baum auf Zug",
+        "stations": {
+            "0": 11,
+            "2": 9,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 5,
+            "rw": 2,
+            "oel": 1,
+            "hoehen": 1,
+            "dlk": 1,
+            "fwk": 1,
+            "elw1": 2,
+            "elw2": 1,
+            "fustw": 2
+        },
+        "credits": 300,
+        "patients": {
+            "max": 20,
+            "transport": 50,
+            "nef": 30,
+            "rth": 5,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "480": {
+        "name": "Flugzeugreifenplatzer",
+        "stations": {
+            "0": 4,
+            "2": 1,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 3,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2
+        },
+        "credits": 2200,
+        "patients": {
+            "max": 1,
+            "transport": 100,
+            "nef": 100,
+            "rth": 40,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "481": {
+        "name": "Flugzeugreifenplatzer",
+        "stations": {
+            "0": 4,
+            "2": 1,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 3,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2
+        },
+        "credits": 2200,
+        "patients": {
+            "max": 1,
+            "transport": 100,
+            "nef": 100,
+            "rth": 40,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "482": {
+        "name": "Flugzeugreifenplatzer",
+        "stations": {
+            "0": 4,
+            "2": 1,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 3,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2
+        },
+        "credits": 2200,
+        "patients": {
+            "max": 1,
+            "transport": 100,
+            "nef": 100,
+            "rth": 40,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "483": {
+        "name": "Flugzeugreifenplatzer",
+        "stations": {
+            "0": 4,
+            "2": 1,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 3,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2
+        },
+        "credits": 2200,
+        "patients": {
+            "max": 1,
+            "transport": 100,
+            "nef": 100,
+            "rth": 40,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "484": {
+        "name": "Transportunfall mit Strahler",
+        "stations": {
+            "0": 14,
+            "2": 4,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 3,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2,
+            "mess": 2,
+            "atem": 1,
+            "dekon": 1
+        },
+        "credits": 2800,
+        "patients": {
+            "max": 3,
+            "min": 1,
+            "transport": 50,
+            "nef": 100,
+            "rth": 10,
+            "specialisation": "Unfallchirurgie"
+        }
+    },
+    "485": {
+        "name": "Brand mehrerer E-Autos in Auslieferungshalle",
+        "stations": {
+            "0": 6,
+            "2": 1,
+            "6": 2
+        },
+        "vehicles": {
+            "lf": 4,
+            "werk": 1,
+            "tm": 1,
+            "ulf": 2,
+            "rw": 1,
+            "elw1": 1,
+            "fustw": 2,
+            "mess": 1,
+            "atem": 1,
+            "dekon": 1,
+            "sw": 1
+        },
+        "credits": 3700
     }
 }

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Filter by Requirements
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.11.1
+// @version      1.12
 // @description  Filters missions by required Stations
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/

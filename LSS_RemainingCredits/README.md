@@ -1,5 +1,6 @@
 <h1>LSS Remaining Credits</h1>
-Coming Soon
+
+Berechnet die zu verdienenden Credits anhand der derzeitigen Einsatzliste
 
 <hr>
 

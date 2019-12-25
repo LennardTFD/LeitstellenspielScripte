@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Sort Missions by Patients
 // @namespace    https://www.leitstellenspiel.de/
-// @version      0.1
+// @version      1.0
 // @description  Sorts missions by Patients
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -79,7 +79,6 @@ GM_addStyle(`
                 {
                     orderByPatientsAscending();
                 }
-                console.log(sortDirection);
             });
         });
         mutationObserver.observe($("#mission_list")[0], {

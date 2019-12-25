@@ -9,25 +9,83 @@
 // @match        https://www.meldkamerspel.com/
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SortByPatients/sortByPatients.user.js
 // @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SortByPatients/sortByPatients.user.js
+// @grant        GM_addStyle
+// ==/UserScript==
+
+GM_addStyle(`
+.caret{
+    color: gray;
+}
+.caret.caret-up {
+    border-top-width: 0;
+    border-bottom: 4px solid;
+  }
+  
+`);
 
 (function() {
     'use strict';
+    var mutationObserver;
 
-    var missions = $("#mission_list").find("div[class*='missionSideBarEntry missionSideBarEntrySearchable']");
-//missions.each((e,t) => {
-//	var patients = $($(t).find(".col-xs-11")[0]).find("div[id*='mission_patients_']").find("div[class*='col-md-6 small']").length;
-//console.log(patients);
-//console.log("Patients", patients);
+    function orderByPatientsDescending() {
+        var missions = $('#mission_list');
 
-//})
-//console.log(missions);
-    var ordered = missions.sort((e, t) => {
-        var patientsE = $($(e).find(".col-xs-11")[0]).find("div[id*='mission_patients_']").find("div[class*='col-md-6 small']").length;
-        var patientsT = $($(t).find(".col-xs-11")[0]).find("div[id*='mission_patients_']").find("div[class*='col-md-6 small']").length;
-        console.log(patientsE, patientsT);
-        return patientsE > patientsT;
-    });
-    console.log(ordered == missions);
-    $("#missions_list").html(ordered);
+        missions.find('a[id*="alarm_button_"]').parent().parent().parent().sort(function(a, b) {
+            return +$(b).find("[id*='patient_bar_outer_']").length - +$(a).find("[id*='patient_bar_outer_']").length;
+        }).appendTo(missions);
+    }
+
+    function orderByPatientsAscending() {
+        var missions = $('#mission_list');
+
+        missions.find('a[id*="alarm_button_"]').parent().parent().parent().sort(function(a, b) {
+            return +$(a).find("[id*='patient_bar_outer_']").length - +$(b).find("[id*='patient_bar_outer_']").length;
+        }).appendTo(missions);
+    }
+    
+    function init() {
+        var sortDirection = "descending";
+        observe();
+        $("#btn-group-mission-select").append("<a id='sortByPatients' href='#'><img src='/images/patient_dark.svg' class='patientPrisonerIcon'><b id='sortPatientDown' class='caret'></b><b id='sortPatientUp' style='display: none' class='caret caret-up'></b></a>");
+        $("#sortByPatients").on("click", () => {
+            mutationObserver.disconnect();
+            if($("#sortPatientUp").css("display") != "none")
+            {
+                $("#sortPatientUp").css("display", "none");
+                $("#sortPatientDown").css("display", "");
+                sortDirection = "ascending";
+                orderByPatientsAscending();
+            }
+            else
+            {
+                $("#sortPatientDown").css("display", "none");
+                $("#sortPatientUp").css("display", "");
+                sortDirection = "descending";
+                orderByPatientsDescending();
+            }
+        });
+    }
+    function observe() {
+        mutationObserver = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+
+                var node = mutation.addedNodes[0];
+                console.log("New Mission");
+                if(sortDirection == "descending")
+                {
+                    orderByPatientsDescending();
+                }
+                else
+                {
+                    orderByPatientsAscending();
+                }
+                console.log(sortDirection);
+            });
+        });
+        mutationObserver.observe($("#mission_list")[0], {
+            childList: true,
+        });
+    }
+    init();
 
 })();

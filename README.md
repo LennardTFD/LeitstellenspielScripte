@@ -101,19 +101,26 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     <ul>
         <li>Erstellt POIs auf der LSS Karte anhand von real Standorten</li>
     </ul>
-    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_SettingsExporter">
-        Settings Exporter</a></b>
-        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js">
-            [Installieren]</a></li>
-    <ul>
-        <li>Exportiert Script Einstellungen aus dem Browser</li>
-    </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_RemainingCredits">
             Remaining Credits</a></b>
             <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_RemainingCredits/remainingCredits.user.js">
                 [Installieren]</a></li>
         <ul>
             <li>Berechnet die zu verdienenden Credits aus der aktuellen Einsatzliste</li>
+        </ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_SettingsExporter">
+            Settings Exporter</a></b>
+            <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SettingsExporter/settingsExporter.user.js">
+                [Installieren]</a></li>
+        <ul>
+            <li>Exportiert Script Einstellungen aus dem Browser</li>
+        </ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_SortByPatients">
+            Sort by Patients</a></b>
+            <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_SortByPatients/sortByPatients.user.js">
+                [Installieren]</a></li>
+        <ul>
+            <li>Sortiert Einsätze nach Anzahl der Patienten</li>
         </ul>
     <!--<li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_StationLocator">
         Station Locator</a></b></li>

@@ -31,7 +31,10 @@ GM_addStyle(`
         var missions = $('#mission_list');
 
         missions.find('a[id*="alarm_button_"]').parent().parent().parent().sort(function(a, b) {
-            return +$(b).find("[id*='patient_bar_outer_']").length - +$(a).find("[id*='patient_bar_outer_']").length;
+            //return +$(b).find("[id*='patient_bar_outer_']").length - +$(a).find("[id*='patient_bar_outer_']").length;
+
+            var patients = getPatients(a, b);
+            return +patients.m2 - +patients.m1;
         }).appendTo(missions);
     }
 
@@ -39,8 +42,28 @@ GM_addStyle(`
         var missions = $('#mission_list');
 
         missions.find('a[id*="alarm_button_"]').parent().parent().parent().sort(function(a, b) {
-            return +$(a).find("[id*='patient_bar_outer_']").length - +$(b).find("[id*='patient_bar_outer_']").length;
+            var patients = getPatients(a, b);
+            return +patients.m1 - +patients.m2;
         }).appendTo(missions);
+    }
+
+    function fromSummary(el) {
+        var summary = $(el).find("[id*='mission_patient_summary_']").find("strong:eq(0)");
+        return parseInt(summary.text()) || 0;
+    }
+
+    function getPatients(a, b) {
+        var m1 = $(a).find("[id*='patient_bar_outer_']").length;
+        var m2 = $(b).find("[id*='patient_bar_outer_']").length;
+        if(m1 == 0)
+        {
+            m1 = fromSummary(a);
+        }
+        if(m2 == 0)
+        {
+            m2 = fromSummary(b);
+        }
+        return {m1: m1, m2: m2};
     }
     
     function init() {
@@ -70,7 +93,6 @@ GM_addStyle(`
             mutations.forEach(function(mutation) {
 
                 var node = mutation.addedNodes[0];
-                console.log("New Mission");
                 if(sortDirection == "descending")
                 {
                     orderByPatientsDescending();

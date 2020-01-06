@@ -27,7 +27,7 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
         <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_BackalarmWithoutPageReload/backalarmWithoutPageReload.user.js">
             [Installieren]</a></li>
     <ul>
-        <li>Zeigt Anzahl an zugewiesenem Personal eines Fahrzeuges an</li>
+        <li>Dieses Script alarmiert einzelne Einheiten eines Einsatzes zurück ohne das Einsatzfenster neu laden zu müssen.</li>
     </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_BuildingS6">
         Building S6</a></b>

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remaining Credits
 // @namespace    https://leitstellenspiel.de
-// @version      1.1
+// @version      1.2
 // @description  Berechnet zu verdienende Credits der derzeitigen Einsatzliste
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
@@ -73,14 +73,14 @@
         //console.log(await getCredits(3));
         requirements = await getRequirements();
 
-        var missionList = $("#mission_list");
+        var missionList = $("#missions-panel-body");
         var missions = missionList.find("a[id*='alarm_button']");
 
         missions.each((e, t) => {
             setupListener($(t).parent().parent().parent());
         });
 
-        mutationObserver.observe($("#mission_list")[0], {
+        mutationObserver.observe($("#missions-panel-body")[0], {
             childList: true,
         });
 
@@ -92,7 +92,8 @@
     function calculate()
     {
         var credits = 0;
-        var missionList = $("#mission_list");
+        var creditsAlliance = 0;
+        var missionList = $("#missions-panel-body");
         var missions = missionList.find("a[id*='alarm_button']").parent().parent().parent().not("[class*='mission_deleted']");
         missions.each((e, t) => {
             var missionId = $(t).attr("mission_type_id");
@@ -102,9 +103,16 @@
             {
                 missionCredits = 250;
             }
-            credits += missionCredits;
+            if(!$(t).parent().attr("id").includes("alliance"))
+            {
+                credits += missionCredits;
+            }
+            else
+            {
+                creditsAlliance += missionCredits;
+            }
         });
-        $("#remCredits").text(beautifyCredits(credits));
+        $("#remCredits").text(beautifyCredits(credits) + " / " + beautifyCredits(creditsAlliance));
         console.log(credits);
     }
     init();

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Mission Header Colorizer
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.3
+// @version      1.3.1
 // @description  Changes Color of Header, depending on City, Mission ID or ZIP Code
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -533,11 +533,12 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
     ////////////////////Colorize Stuff////////////////////
 
     //Get City of Mission
-    function getOrt(page, index)
+    function getOrt(page, mission)
     {
-        if(page == "map" && index != null)
+        if(page == "map" && mission != null)
         {
-            var ort = $("#missions_outer").find("[id^='mission_address_']:eq(" + index + ")").text();
+            var ort = $(mission).find("[id^='mission_address_']").text();
+            //var ort = $("#missions_outer").find("[id^='mission_address_']:eq(" + index + ")").text();
         }else if(page == "mission")
         {
             var ort = $(".col-md-6:eq(0)").find("small").text();
@@ -558,11 +559,11 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
         return ort;
     }
 
-    function getZip(page, index)
+    function getZip(page, mission)
     {
-        if(page == "map" && index != null)
+        if(page == "map" && mission != null)
         {
-            var zip = $("#missions_outer").find("[id^='mission_address_']:eq(" + index + ")").text();
+            var zip = $(mission).find("[id^='mission_address_']").text();
         }else if(page == "mission")
         {
             var zip = $(".col-md-6:eq(0)").find("small").text();
@@ -599,12 +600,12 @@ var transparency, cities, citiesColors, zips, zipColors, missionIDs, missionColo
             transparency = "ff";
         }
 
-        $(missionList).each(function(index){
+        $(missionList).each(function(index, mission){
 
             colorSet = false;
 
-            var ort = getOrt("map", index);
-            var zip = getZip("map", index);
+            var ort = getOrt("map", mission);
+            var zip = getZip("map", mission);
             var cityIndex = findSimilarOrt(ort);
             //var zipIndex = zips.indexOf(zip);
 

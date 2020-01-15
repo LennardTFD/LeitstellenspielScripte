@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remaining Credits
 // @namespace    https://leitstellenspiel.de
-// @version      1.2
+// @version      1.21
 // @description  Berechnet zu verdienende Credits der derzeitigen Einsatzliste
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
@@ -66,7 +66,7 @@
 
         let filterDiv = $("#btn-group-mission-select");
         let html = `<br><br>
-                    <span>Zu verdienen: <span id='remCredits'>0</span> Credits</span>
+                    <span>Zu verdienen: <span id='remCredits'>0 / 0</span> Credits</span>
                     `;
         let filterBtns = filterDiv.append(html);
 
@@ -96,13 +96,10 @@
         var missionList = $("#missions-panel-body");
         var missions = missionList.find("a[id*='alarm_button']").parent().parent().parent().not("[class*='mission_deleted']");
         missions.each((e, t) => {
+            //if($(t).parent().css("display") == "none") return;
             var missionId = $(t).attr("mission_type_id");
             if(missionId == "null") return;
-            var missionCredits = requirements[parseInt(missionId)].credits;
-            if(missionCredits == undefined)
-            {
-                missionCredits = 250;
-            }
+            var missionCredits = requirements[parseInt(missionId)].credits || 250;
             if(!$(t).parent().attr("id").includes("alliance"))
             {
                 credits += missionCredits;
@@ -113,7 +110,7 @@
             }
         });
         $("#remCredits").text(beautifyCredits(credits) + " / " + beautifyCredits(creditsAlliance));
-        console.log(credits);
+        //console.log(credits);
     }
     init();
 })();

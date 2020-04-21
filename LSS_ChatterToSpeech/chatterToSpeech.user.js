@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Chatter to Speech
 // @namespace    https://www.leitstellenspiel.de/
-// @version      1.6
+// @version      1.7
 // @description  Einsatzfunk zu Sprache
 // @author       LennardTFD
 // @match        https://www.leitstellenspiel.de/
@@ -13,6 +13,8 @@
 // ==/UserScript==
 
 var SIREN_URL = "MYAUDIOURL";
+//Deaktiviert Sound Ausgabe für Status. Beispiel: [1, 2, 3, 4]
+var DISABLECHATTERFORSTATUS = [];
 var translationLanguage = ""; //Empty, IT
 
 //VOICES CHROME
@@ -193,8 +195,8 @@ function chatParser(missionInfo)
         unit = unit.replace(wordsToPronounce[i][0], wordsToPronounce[i][1]);
     }
     //removes "/" and "-" from call signs
-    unit = unit.replace(/\//gi, " ");
-    unit = unit.replace(/-/gi, " ");
+    unit = unit.replace(/\//gi, "\b");
+    unit = unit.replace(/-/gi, "\b");
 
     //Select a random phrase from phrases list depending of Language
     var pharse = phrases[lang][status][Math.floor(Math.random()*phrases[lang][status].length)];
@@ -265,6 +267,7 @@ function workOffQueue()
 function addToQueue(unit, status, address, missionName, buildingName)
 {
     //Add new chatter message to working queue
+    if(DISABLECHATTERFORSTATUS.includes(parseInt(status))) return;
     chatterQueue.push([unit, status, address, missionName, buildingName]);
 }
 
@@ -282,7 +285,6 @@ function stopBackground()
 
 function chatter(msg)
 {
-
     var t2s = new SpeechSynthesisUtterance();
     t2s.text = msg;
     t2s.lang = lang;

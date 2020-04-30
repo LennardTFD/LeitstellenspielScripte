@@ -99,6 +99,8 @@
             //if($(t).parent().css("display") == "none") return;
             var missionId = $(t).attr("mission_type_id");
             if(missionId == "null") return;
+            //TODO API Update
+            //var missionCredits = requirements[parseInt(missionId)].average_credits || 250;
             var missionCredits = requirements[parseInt(missionId)].credits || 250;
             if(!$(t).parent().attr("id").includes("alliance"))
             {

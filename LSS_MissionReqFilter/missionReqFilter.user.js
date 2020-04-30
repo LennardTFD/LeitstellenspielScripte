@@ -143,6 +143,8 @@ function filter(fw, rd, pol, thw, water) {
             // 0 = FW, 2 = RD, 6 = POL, 9 = THW, 11 = BePOL, 13 = PolHeli, 15 = Wasserrettung, werk = Werk, sek = SEK, mek = MEK
             let mission = $(t);
             let missionId = mission.attr("mission_type_id");
+            //TODO API Update
+            //let req = requirements[missionId].requirements
             let req = requirements[missionId].stations;
 
 
@@ -154,6 +156,7 @@ function filter(fw, rd, pol, thw, water) {
             {
                 let stations = Object.keys(req);
                 //console.log(stations);
+                //TODO API Update
                 for(let i = 0; i < stations.length; i++)
                 {
                     switch (stations[i]) {

@@ -17,6 +17,7 @@ GM_addStyle(`
     width:20px;
     height:20px;
     margin-left:5px;
+    vertical-align:middle;
     cursor:pointer;
     background-color:#cecece;
     border-radius:2px;

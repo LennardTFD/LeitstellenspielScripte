@@ -31,7 +31,7 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_BuildingS6">
         Building S6</a></b>
-        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_BuildingS6/buildingS6.user.js">
+        <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_BuildingS6/allianceMissionLocation.user.js">
             [Installieren]</a></li>
     <ul>
         <li>Setzt gesamte Wache auf Status 2/6</li>

@@ -106,7 +106,7 @@ else
 
     function setupBtnListener()
     {
-        if(disable)
+        if(poiIsSet)
         {
             return;
         }
@@ -123,7 +123,7 @@ else
             }, 200);
         });
     }
-    const disable = true;
+    const poiIsSet = true;
     async function requestPOIsInRange() {
         //console.log("Starting generation!");
         let radius = $("#poiGeneratorRange").val();

@@ -14,6 +14,13 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     <ul>
         <li>Dieses Script entfernt alle dem Verband gehörenden Gebäude Marker von der Karte</li>
     </ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_AllianceMissionLocation">
+            Alliance Mission Location</a></b>
+            <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AllianceMissionLocation/allianceMissionLocation.user.js">
+                [Installieren]</a></li>
+        <ul>
+            <li>Fügt Standort des Einsatzes zu Chat Nachricht hinzu</li>
+        </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_AssignedWorkers">
         Assinged Workers</a></b>
         <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_AssignedWorkers/assignedWorkers.user.js">
@@ -34,7 +41,7 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
         <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_BuildingS6/allianceMissionLocation.user.js">
             [Installieren]</a></li>
     <ul>
-        <li>Setzt gesamte Wache auf Status 2/6</li>
+        <li>Setzt gesamte Wache auf Status 2/6 (fehlerbehaftet)</li>
     </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_ChatterToSpeech">
         Chatter to Speech</a></b>
@@ -94,13 +101,15 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     <ul>
         <li>Wählt die zuletzt genutzte AAO Kategorie als Start Tab</li>
     </ul>
+    <s>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_POIGenerator">
-        POI Generator</a></b>
+        [DEAKTIVIERT] POI Generator</a></b>
         <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_POIGenerator/poiGenerator.user.js">
             [Installieren]</a></li>
     <ul>
         <li>Erstellt POIs auf der LSS Karte anhand von real Standorten</li>
     </ul>
+    </s>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_RemainingCredits">
             Remaining Credits</a></b>
             <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_RemainingCredits/remainingCredits.user.js">

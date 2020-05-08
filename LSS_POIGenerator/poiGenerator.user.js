@@ -39,7 +39,7 @@ else
 
         let button = "<input id='poiGeneratorStart' type='button' value='Generieren' class='btn btn-success btn'>";
 
-        let progress = "<br><div id='poiGeneratorProgress'></div>";
+        let progress = "<div id='poiGeneratorProgress'></div>";
 
 
 

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         POI Generator
 // @namespace    https://leitstellenspiel.de
-// @version      1.0
+// @version      1.1
 // @description  Generates POIs based on OSM Data
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
@@ -250,7 +250,7 @@ else
                 filterString[0] = "['building'='farm']";
                 filterString[1] = "['building'='barn']";
                 filterString[2] = "['building'='farm_auxiliary']";
-                filterString[2] = "['building'='stable']";
+                filterString[3] = "['building'='stable']";
                 break;
             //Office
             case 22:
@@ -294,7 +294,7 @@ else
             case 29:
             case 32:
                 filterString[0] = "['aeroway'='runway']";
-                filterString[0] = "['aeroway'='taxiway']";
+                filterString[1] = "['aeroway'='taxiway']";
                 break;
             //Airport Building/Terminal
             case 30:
@@ -344,12 +344,16 @@ else
             case 42:
                 filterString[0] = "['amenity'='waste_disposal']";
                 break;
-            //Trash burning
+            //Ice Skating
             case 43:
                 filterString[0] = "['sport'='ice_skating']";
-                filterString[0] = "['leisure'='ice_rink']";
+                filterString[1] = "['leisure'='ice_rink']";
                 break;
-
+            //Woodprocessing
+            case 44:
+                filterString[0] = "['craft'~'parquet layer|roofer|carpenter|window construction|joiner']";
+                filterString[1] = "['shop'='doityourself']";
+                break;
         }
 
 

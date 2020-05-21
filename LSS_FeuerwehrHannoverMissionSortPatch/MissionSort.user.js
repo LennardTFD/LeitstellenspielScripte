@@ -8,7 +8,7 @@
 $(document).ready(function () {
     if ("/" == window.location.pathname) {
         var e = {}, t = {}, i = {}, n = {}, s = {}, r = {};
-        sessionStorage.getItem("missionsort") ? r = JSON.parse(sessionStorage.getItem("missionsort")) : $.get("https://lssm.ledbrain.de/api/missions.php", function (e) {
+        sessionStorage.getItem("missionsort") ? r = JSON.parse(sessionStorage.getItem("missionsort")) : $.get("https://www.leitstellenspiel.de/einsaetze.json", function (e) {
             $.each(e, function (t) {
                 null != e[t].average_credits ? (console.log(typeof e), r[t] = {}, r[t].Credits = e[t].average_credits) : (r[t] = {}, r[t].Credits = "0")
             }), sessionStorage.setItem("missionsort", JSON.stringify(r))

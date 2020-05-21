@@ -10,7 +10,8 @@ $(document).ready(function () {
         var e = {}, t = {}, i = {}, n = {}, s = {}, r = {};
         sessionStorage.getItem("missionsort") ? r = JSON.parse(sessionStorage.getItem("missionsort")) : $.get("https://www.leitstellenspiel.de/einsaetze.json", function (e) {
             $.each(e, function (t) {
-                null != e[t].average_credits ? (console.log(typeof e), r[t] = {}, r[t].Credits = e[t].average_credits) : (r[t] = {}, r[t].Credits = "0")
+                let missionId = e[t].id;
+                null != e[t].average_credits ? (console.log(typeof e), r[missionId] = {}, r[missionId].Credits = e[t].average_credits) : (r[missionId] = {}, r[missionId].Credits = "0")
             }), sessionStorage.setItem("missionsort", JSON.stringify(r))
         }), $("body").hasClass("dark") ? localStorage.setItem("sort-dark", !0) : localStorage.removeItem("sort-dark"), $("#btn-group-mission-select").append('<button id="sortdebug" class="btn btn-xs btn-default mission_selection"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button> <button id="sortdate" class="btn btn-xs btn-default mission_selection"><span class="glyphicon glyphicon-time" aria-hidden="true"></span></button> <button id="sortcredits" class="btn btn-xs btn-default mission_selection"><span class="glyphicon glyphicon glyphicon glyphicon-euro" aria-hidden="true"></span></button> <button id="sortabc" class="btn btn-xs btn-default mission_selection"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></button>'), localStorage.removeItem("sort-credits"), localStorage.removeItem("sort-date"), localStorage.removeItem("sort-credits-alliance"), localStorage.removeItem("sort-abc"), localStorage.removeItem("sort-abc-alliance"), $("#mission_list .missionSideBarEntry").each(function () {
             $(this).attr("sort-default", $(this).index())

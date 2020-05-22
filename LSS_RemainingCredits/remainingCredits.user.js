@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Remaining Credits
 // @namespace    https://leitstellenspiel.de
-// @version      1.22
+// @version      1.23
 // @description  Berechnet zu verdienende Credits der derzeitigen Einsatzliste
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
@@ -39,7 +39,7 @@
     {
         return new Promise(resolve => {
             $.ajax({
-                url: "https://lssm.ledbrain.de/api/missions.php",
+                url: "https://www.leitstellenspiel.de/einsaetze.json",
                 method: "GET",
             }).done((res) => {
                 resolve(res);
@@ -71,7 +71,15 @@
         let filterBtns = filterDiv.append(html);
 
         //console.log(await getCredits(3));
-        requirements = await getRequirements();
+        if(sessionStorage.getItem("LSS_MissionCache") == null)
+        {
+            requirements = await getRequirements();
+            sessionStorage.setItem("LSS_MissionCache", JSON.stringify(requirements));
+        }
+        else
+        {
+            requirements = JSON.parse(sessionStorage.getItem("LSS_MissionCache"));
+        }
 
         var missionList = $("#missions-panel-body");
         var missions = missionList.find("a[id*='alarm_button']");
@@ -95,13 +103,18 @@
         var creditsAlliance = 0;
         var missionList = $("#missions-panel-body");
         var missions = missionList.find("a[id*='alarm_button']").parent().parent().parent().not("[class*='mission_deleted']").not("[class*='mission_alliance_distance_hide']");
-        missions.each((e, t) => {
+        missions.each(async (e, t) => {
             //if($(t).parent().css("display") == "none") return;
             var missionId = $(t).attr("mission_type_id");
             if(missionId == "null") return;
-            //TODO API Update
+            let mission = requirements.filter(e => e.id == parseInt(missionId))[0];
+            if(mission == undefined)
+            {
+                requirements = await getRequirements();
+                mission = requirements.filter(e => e.id == parseInt(missionId))[0];
+            }
             //var missionCredits = requirements[parseInt(missionId)].average_credits || 250;
-            var missionCredits = requirements[parseInt(missionId)].credits || 250;
+            var missionCredits = mission.average_credits || 250;
             if(!$(t).parent().attr("id").includes("alliance"))
             {
                 credits += missionCredits;

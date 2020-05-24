@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         Foreb Dakrmode
+// @name         Foren Darkmode
 // @namespace    https://forum.leitstellenspiel.de/
-// @version      1.0
+// @version      1.1
 // @description  Versetzt das LSS Forum in den Darkmode (und viele andere WoltLab Foren)
 // @author       Lennard[TFD]
 // @match        https://forum.leitstellenspiel.de/*
@@ -30,7 +30,7 @@ GM_addStyle(`
 .pageNavigation{background-color:#a70c00 !important}
 .breadcrumbs a {color:white !important}
 .wbbThreadList {background-color:#212121 !important}
-.badge {background-color:#818181 !important}
+.badge {background-color:#818181}
 .icon {color:white !important}
 /*Thread List*/
 .likeCounterLiked span{color:#0f0 !important}
@@ -68,12 +68,21 @@ h2{color:white !important}
 .dialogContent {background-color:#212121 !important; color:white}
 
 .userMessage {color:white}
-.commentResponse:hover{background-color:#3b3b3b !important}
+.commentResponse:hover {background-color:#3b3b3b !important}
 
 li .button {color:white}
+
+button.small {background-color:#3b3b3b !important; color:white}
+.inputItemList .item {background-color:#212121 !important; color:white}
+
+.tagList .tag {color:white}
+.messageShareButtons li * {background-color:#3b3b3b !important}
 
 .redactor-layer {background-color:#212121 !important; color:white}
 .messageSidebar {background-color:#212121 !important; color:white}
 .messageBody, .messageFooter, .messageTabMenu * {background-color:#212121 !important; color:white !important}
-.quoteBox, .messageReduced * {background-color:#3b3b3b !important; color:white}
+woltlab-quote, .quoteBox, .quoteBox .toggleButton, .codebox, .codebox .toggleButton, .messageReduced *, .button, .spoilerBoxContent {background-color:#3b3b3b !important; color:white}
+.quoteBox.collapsed .toggleButton {box-shadow: 0 -10px 50px 10px #3b3b3b}
+.codeBox.collapsed .toggleButton {box-shadow: 0 -10px 50px 10px #3b3b3b}
+
 `);

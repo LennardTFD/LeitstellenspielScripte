@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         WoltLab Dakrmode
+// @name         Foreb Dakrmode
 // @namespace    https://forum.leitstellenspiel.de/
 // @version      1.0
 // @description  Versetzt das LSS Forum in den Darkmode (und viele andere WoltLab Foren)
@@ -8,6 +8,7 @@
 // @match        https://forum.rettungssimulator.online/*
 // @updateURL    https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ForumDarkMode/forumDarkMode.user.js
 // @downloadURL  https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_ForumDarkMode/forumDarkMode.user.js
+// @run-at document-start
 // @grant        GM_addStyle
 // ==/UserScript==
 
@@ -49,8 +50,8 @@ GM_addStyle(`
 #pageFooter.boxContainer.boxContent{background-color:#b71c0c !important}
 .boxesFooterBoxes, .boxesFooterBoxes * {background-color:#212121 !important}
 
-#recentActivities li {color:white !important}
-#recentActivities li:hover {background-color:#3b3b3b !important;}
+#recentActivities li, .messageSearchResultList li {color:white !important}
+#recentActivities li:hover, .messageSearchResultList li:hover {background-color:#3b3b3b !important;}
 
 .userList li {color:white !important}
 .userList li:hover {background-color:#3b3b3b !important;}

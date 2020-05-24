@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Foren Darkmode
 // @namespace    https://forum.leitstellenspiel.de/
-// @version      1.1
+// @version      1.1.1
 // @description  Versetzt das LSS Forum in den Darkmode (und viele andere WoltLab Foren)
 // @author       Lennard[TFD]
 // @match        https://forum.leitstellenspiel.de/*
@@ -50,11 +50,10 @@ GM_addStyle(`
 #pageFooter.boxContainer.boxContent{background-color:#b71c0c !important}
 .boxesFooterBoxes, .boxesFooterBoxes * {background-color:#212121 !important}
 
-#recentActivities li, .messageSearchResultList li {color:white !important}
-#recentActivities li:hover, .messageSearchResultList li:hover {background-color:#3b3b3b !important;}
+#recentActivities li, .messageSearchResultList li, .userList li {color:white !important}
+#recentActivities li:hover, .messageSearchResultList li:hover, .userList li:hover, .likeList li:hover, table tr:hover > td {background-color:#3b3b3b !important;}
 
-.userList li {color:white !important}
-.userList li:hover {background-color:#3b3b3b !important;}
+
 .buttonList iconList {color:black !important}
 
 .wbbBoard:hover{background-color:#3b3b3b !important;}
@@ -81,8 +80,13 @@ button.small {background-color:#3b3b3b !important; color:white}
 .redactor-layer {background-color:#212121 !important; color:white}
 .messageSidebar {background-color:#212121 !important; color:white}
 .messageBody, .messageFooter, .messageTabMenu * {background-color:#212121 !important; color:white !important}
-woltlab-quote, .quoteBox, .quoteBox .toggleButton, .codebox, .codebox .toggleButton, .messageReduced *, .button, .spoilerBoxContent {background-color:#3b3b3b !important; color:white}
+woltlab-quote, woltlab-spoiler, .redactor-layer pre, .quoteBox, .quoteBox .toggleButton, .codebox, .codeBox .toggleButton, .messageReduced *, .button, .spoilerBoxContent {background-color:#3b3b3b !important; color:white !important}
 .quoteBox.collapsed .toggleButton {box-shadow: 0 -10px 50px 10px #3b3b3b}
 .codeBox.collapsed .toggleButton {box-shadow: 0 -10px 50px 10px #3b3b3b}
+
+.section {color:white}
+
+.popoverContent, .codeBox  {background-color:#3b3b3b !important; color:white}
+
 
 `);

@@ -88,7 +88,8 @@ woltlab-quote, woltlab-spoiler, .redactor-layer pre, .quoteBox, .quoteBox .toggl
 
 .popoverContent, .codeBox  {background-color:#3b3b3b !important; color:white}
 
-.messageBody span[style*='color:rgb('] {filter:invert(100%)}
+.messageBody span[style*='color:rgb(']  {filter:invert(100%)}
+.codeBox span[class*='hl'] {filter:invert(100%)}
 
 .wbbTopicLink{color:#c72c1c !important}
 

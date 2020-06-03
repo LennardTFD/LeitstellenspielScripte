@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Foren Darkmode
 // @namespace    https://forum.leitstellenspiel.de/
-// @version      1.1.2
+// @version      1.1.3
 // @description  Versetzt das LSS Forum in den Darkmode (und viele andere WoltLab Foren)
 // @author       Lennard[TFD]
 // @match        https://forum.leitstellenspiel.de/*
@@ -31,7 +31,7 @@ GM_addStyle(`
 .breadcrumbs a {color:white !important}
 .wbbThreadList {background-color:#212121 !important}
 .badge {background-color:#818181}
-.icon {color:white !important}
+.icon:not(.green):not(.red) {color:white !important}
 /*Thread List*/
 .likeCounterLiked span{color:#0f0 !important}
 .tabularListRow:hover{background-color:#3b3b3b !important}
@@ -89,6 +89,9 @@ woltlab-quote, woltlab-spoiler, .redactor-layer pre, .quoteBox, .quoteBox .toggl
 .popoverContent, .codeBox  {background-color:#3b3b3b !important; color:white}
 
 .messageBody span[style*='color:rgb('] {filter:invert(100%)}
+
+.wbbTopicLink{color:#c72c1c !important}
+
 
 
 `);

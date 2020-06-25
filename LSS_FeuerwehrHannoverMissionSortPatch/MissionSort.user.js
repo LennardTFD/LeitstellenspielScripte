@@ -1,10 +1,15 @@
 // ==UserScript==
 // @name         Einsatzsortierung
-// @version      1.1p
+// @version      1.2p
 // @author       FeuerwehrHannover
 // @include      *://www.leitstellenspiel.de/
 // @include      *://www.leitstellenspiel.de/missions/*
 // ==/UserScript==
+
+//Makro: Strg+Alt+L
+const MAKRO_KEY = "l";
+
+
 $(document).ready(function () {
     if ("/" == window.location.pathname) {
         var e = {}, t = {}, i = {}, n = {}, s = {}, r = {};
@@ -107,6 +112,14 @@ $(document).ready(function () {
             var m = localStorage.getItem("sort-next");
             localStorage.removeItem("sort-next"), window.location.href = "https://www.leitstellenspiel.de/missions/" + m
         }
+
+        document.addEventListener ("keydown", function (zEvent) {
+            if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.key === MAKRO_KEY) {  // case sensitive
+                $("#sort-alert-next").click();
+            }
+        } );
+
+
         if ($(document).on("click", "#sort-alert-next", function () {
             localStorage.setItem("sort-next", $("#sort-alert-next").attr("next")), $("#mission_alarm_btn").click()
         }), null == localStorage.getItem("sort-mode")) throw a(" Es konnte keine Sortierung gefunden werden | ID: #4 (no sort-mode)"), new Error("Einsatzsortierung | Ein Fehler ist aufgetreten! Bei Problemen melde dich im Forum. ID: #4");

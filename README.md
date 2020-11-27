@@ -57,6 +57,13 @@ Hier ist meine Sammlung an erstellten Scipts für die Browsergames
     <ul>
         <li>Wählt alle Privaten Nachrichten zum löschen aus</li>
     </ul>
+    <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_HideUnrelatedPaths">
+            Hide Unrelated Paths</a></b>
+            <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_HideUnrelatedPaths/hideUnrelatedPaths.user.js">
+                Installieren</a></li>
+        <ul>
+            <li>Blendet alle Fahrzeugrouten aus, die nicht zu einem bestimmten Einsatz gehören</li>
+        </ul>
     <li><b><a href="https://github.com/LennardTFD/LeitstellenspielScripte/tree/master/LSS_MessageAudio">
         Message Audio</a></b>
         <a href="https://github.com/LennardTFD/LeitstellenspielScripte/raw/master/LSS_MessageAudio/messageAudio.user.js">

@@ -11,7 +11,7 @@
 // ==/UserScript==
 
 (function() {
-
+    var aVehicles;
     /******************************* LOOK UP TABLE AREA *******************************/
 
         //LookupTable for missions and vehicles
@@ -85,18 +85,22 @@
         });
     }
 
-    function init()
+    async function init()
     {
+
+        if(!localStorage.aVehicles || JSON.parse(localStorage.aVehicles).lastUpdate < (new Date().getTime() - 5 * 1000 * 60) || JSON.parse(localStorage.aVehicles).userId != user_id) await $.getJSON('/api/vehicles').done(data => localStorage.setItem('aVehicles', JSON.stringify({lastUpdate: new Date().getTime(), value: data, userId: user_id})) );
+        aVehicles = JSON.parse(localStorage.aVehicles).value;
+
         //For each existing marker, create listener
-        for(marker of mission_markers)
+        for(let marker of mission_markers)
         {
             markerListener(marker);
         }
 
         //Get all vehicles
-        let vehicleData = $.getJSON("api/vehicles", (vehicles) => {
+        //let vehicleData = $.getJSON("api/vehicles", (vehicles) => {
             //Get Vehicles with mission realtion
-            vehicles = vehicles.filter((e) => {
+            let vehicles = aVehicles.filter((e) => {
                 return e.target_id != null && e.target_type == "mission";
             });
 
@@ -105,7 +109,9 @@
             {
                 setVehicleRelation(vehicle.id, vehicle.target_id);
             }
-        });
+        //});
+
+
 
     }
 

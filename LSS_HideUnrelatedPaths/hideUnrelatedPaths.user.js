@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hide Unrelated Paths
 // @namespace    https://www.leitstellenspiel.de/
-// @version      0.1
+// @version      0.2
 // @description  Blende Fahrzeugrouten aus, die nicht zum mouse hover Einsatz gehören
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
@@ -54,6 +54,7 @@
 
     function hideVehicleRoutes(missionID, mode = "show")
     {
+        if(missionID == null || missionID == "") return;
         //For every Vehicle on Map
         for(let vehicle_marker of vehicle_markers)
         {
@@ -69,11 +70,10 @@
         }
     }
 
-
     /******************************* SETUP AREA *******************************/
 
 
-    function markerListener(marker)
+    function missionMarkerListener(marker)
     {
         let id = marker.mission_id;
         marker.addEventListener("mouseover", () => {
@@ -82,6 +82,17 @@
         //Create event Listeners to show unrelated paths on Mission mouse leave
         marker.addEventListener("mouseout", () => {
             hideVehicleRoutes(id, "show");
+        });
+    }
+
+    function vehicleMarkerListener(vehicle)
+    {
+        vehicle.addEventListener("mouseover", () => {
+            hideVehicleRoutes(getVehicleMission(vehicle.vehicle_id), "hide");
+        });
+        //Create event Listeners to show unrelated paths on Mission mouse leave
+        vehicle.addEventListener("mouseout", () => {
+            hideVehicleRoutes(getVehicleMission(vehicle.vehicle_id), "show");
         });
     }
 
@@ -94,7 +105,11 @@
         //For each existing marker, create listener
         for(let marker of mission_markers)
         {
-            markerListener(marker);
+            missionMarkerListener(marker);
+        }
+        for(let vehicle of vehicle_markers)
+        {
+            vehicleMarkerListener(vehicle);
         }
 
         //Get all vehicles
@@ -135,13 +150,14 @@
         else setVehicleRelation(vehicleID, missionID);
         //call original function
         vehicleDriveOld(d);
+        missionMarkerListener(vehicle_markers[vehicle_markers.length - 1]);
     }
     //overwrite missionMarkerAdd function
     var missionMarkerAddOld = missionMarkerAdd;
     missionMarkerAdd = function(e) {
         //call original function
         missionMarkerAddOld(e);
-        markerListener(mission_markers[mission_markers.length - 1]);
+        missionMarkerListener(mission_markers[mission_markers.length - 1]);
     }
 
     init();

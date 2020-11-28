@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Hide Unrelated Paths
 // @namespace    https://www.leitstellenspiel.de/
-// @version      0.2
+// @version      0.3
 // @description  Blende Fahrzeugrouten aus, die nicht zum mouse hover Einsatz gehören
 // @author       Lennard[TFD]
 // @match        https://www.leitstellenspiel.de/
@@ -11,7 +11,10 @@
 // ==/UserScript==
 
 (function() {
-    var aVehicles;
+    let aVehicles;
+    let mapType;
+    if('undefined' == typeof mapkit) mapType = "leaflet";
+    else mapType = "mapkit";
     /******************************* LOOK UP TABLE AREA *******************************/
 
         //LookupTable for missions and vehicles
@@ -64,8 +67,15 @@
                 //If show is request, show it, else hide it
                 //if(mode == "show") map.addLayer(vehicle_marker.polyline);
                 //else map.removeLayer(vehicle_marker.polyline);
-                if(mode == "show") vehicle_marker.polyline.setStyle({opacity: 1});
-                else vehicle_marker.polyline.setStyle({opacity: 0.2});
+                if(mode == "show") {
+                    vehicle_marker.polyline.setStyle({opacity: 1});
+                    vehicle_marker.setOpacity(1);
+                }
+                else
+                {
+                    vehicle_marker.polyline.setStyle({opacity: 0.2});
+                    vehicle_marker.setOpacity(0.2);
+                }
             }
         }
     }
@@ -98,9 +108,13 @@
 
     async function init()
     {
-
+/*
         if(!localStorage.aVehicles || JSON.parse(localStorage.aVehicles).lastUpdate < (new Date().getTime() - 5 * 1000 * 60) || JSON.parse(localStorage.aVehicles).userId != user_id) await $.getJSON('/api/vehicles').done(data => localStorage.setItem('aVehicles', JSON.stringify({lastUpdate: new Date().getTime(), value: data, userId: user_id})) );
         aVehicles = JSON.parse(localStorage.aVehicles).value;
+
+ */
+
+        await $.getJSON('/api/vehicles').done(data => aVehicles = data );
 
         //For each existing marker, create listener
         for(let marker of mission_markers)
@@ -143,14 +157,13 @@
         if(missionID == "" || missionID == null)
         {
             //Get Old Mission
-            let oldMissionID = getVehicleMission(vehicleID);
+            let oldMissionID = getVehicleMission(vehicleID) || null;
             //If old mission is known, remove Vehicle relation from mission
-            if(oldMissionID != undefined) removeVehicleRelation(vehicleID, oldMissionID);
+            removeVehicleRelation(vehicleID, oldMissionID);
         }
         else setVehicleRelation(vehicleID, missionID);
         //call original function
         vehicleDriveOld(d);
-        missionMarkerListener(vehicle_markers[vehicle_markers.length - 1]);
     }
     //overwrite missionMarkerAdd function
     var missionMarkerAddOld = missionMarkerAdd;
@@ -158,6 +171,13 @@
         //call original function
         missionMarkerAddOld(e);
         missionMarkerListener(mission_markers[mission_markers.length - 1]);
+    }
+
+    var vehicleMarkerAddOld = vehicleMarkerAdd;
+    vehicleMarkerAdd = function(e)
+    {
+        vehicleMarkerAddOld(e);
+        vehicleMarkerListener(vehicle_markers[vehicle_markers.length - 1]);
     }
 
     init();
